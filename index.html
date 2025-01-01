@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mohamed Elnaggar</title>
+    <style>
+        /* Variables pour les couleurs */
+        :root {
+            --background: #121212;
+            --text-primary: #FFFFFF;
+            --accent-blue: #0D6EFD;
+            --accent-green: #00FF87;
+            --card-bg: #1F1F1F;
+            --card-hover: #292929;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-blue);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1F1F1F, #121212);
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background-color: var(--accent-green);
+            border: none;
+            color: var(--background);
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+
+        .hero button:hover {
+            background-color: var(--accent-blue);
+        }
+
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: left;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background-color: var(--card-hover);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: var(--card-bg);
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--accent-green);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent-blue);
+        }
+
+        .certification-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mohamed Elnaggar</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Étudiant en Cybersécurité | Passionné de Pentest</h2>
+        <p>Mon objectif : intégrer la G19 et devenir un expert en cybersécurité offensive.</p>
+        <button onclick="window.location.href='#skills'">Voir mes compétences</button>
+        <button onclick="window.location.href='#projects'">Découvrir mes projets</button>
+    </section>
+
+    <section id="skills">
+        <h2>Compétences</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Réseaux</h3>
+                <p>Création de réseaux de A à Z, configuration de routeurs et switches, protocoles TCP/IP, DHCP, DNS,
+                    VLANs.</p>
+            </div>
+            <div class="card">
+                <h3>Systèmes</h3>
+                <p>Administration Active Directory, gestion des utilisateurs, déploiement de serveurs Windows et Linux.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Hacking Éthique</h3>
+                <p>Analyse des vulnérabilités avec Nmap, exploitation avec Metasploit, techniques de brute force avec
+                    Hydra.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projets</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Projet 1</h3>
+                <p>Configuration d’un réseau sécurisé avec Active Directory et services DHCP.</p>
+            </div>
+            <div class="card">
+                <h3>Projet 2</h3>
+                <p>Simulation d’attaques réseau sur TryHackMe avec exploitation de vulnérabilités.</p>
+            </div>
+            <div class="card">
+                <h3>Projet 3</h3>
+                <p>Mise en place d’un serveur Linux avec durcissement de la sécurité.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="cards">
+            <div class="card certification-card">
+                <img src="https://via.placeholder.com/300x200" alt="Cybersecurity Essentials">
+                <h3>Cybersecurity Essentials</h3>
+                <p>Formation Cisco Networking Academy sur les bases de la cybersécurité.</p>
+            </div>
+            <div class="card certification-card">
+                <img src="https://via.placeholder.com/300x200" alt="SecNumAcadémie">
+                <h3>SecNumAcadémie</h3>
+                <p>Certification ANSSI couvrant les fondamentaux de la sécurité des systèmes d’information.</p>
+            </div>
+            <div class="card certification-card">
+                <img src="https://via.placeholder.com/300x200" alt="TryHackMe">
+                <h3>TryHackMe Pre-Security</h3>
+                <p>Parcours complet sur les bases de la sécurité offensive.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Vous souhaitez collaborer ou en savoir plus ?</p>
+        <p><a href="mailto:elnaggar.mohamed@example.com">elnaggar.mohamed@example.com</a></p>
+        <p>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            |
+            <a href="https://github.com" target="_blank">GitHub</a>
+            |
+            <a href="https://tryhackme.com" target="_blank">TryHackMe</a>
+        </p>
+    </section>
+
+    <footer>
+        <p>Conçu avec passion par Mohamed Elnaggar</p>
+    </footer>
+</body>
+
+</html>
