@@ -1,4 +1,15 @@
-// Ajoute une classe active lorsque les sections sont visibles à l'écran
+// Effet sticky pour le menu
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('sticky');
+    } else {
+        header.classList.remove('sticky');
+    }
+});
+
+// Effet d'apparition des sections
 const sections = document.querySelectorAll('section');
 
 const revealSection = () => {
@@ -11,15 +22,8 @@ const revealSection = () => {
 };
 
 window.addEventListener('scroll', revealSection);
-const header = document.querySelector('header');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('sticky');
-    } else {
-        header.classList.remove('sticky');
-    }
-});
+// Carrousel pour les images
 let currentSlide = 0;
 
 const moveCarousel = (direction) => {
@@ -28,6 +32,3 @@ const moveCarousel = (direction) => {
     currentSlide = (currentSlide + direction + items.length) % items.length;
     items[currentSlide].classList.add('active');
 };
-window.addEventListener('load', () => {
-    alert('Bienvenue sur mon portfolio ! 🎉');
-});

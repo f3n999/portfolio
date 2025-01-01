@@ -10,10 +10,15 @@ header {
     background: #1F1F1F;
     padding: 1rem;
     text-align: center;
+    position: relative;
+    transition: all 0.3s ease-in-out;
 }
 
-header h1 {
-    margin: 0;
+header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -24,18 +29,10 @@ nav ul {
     gap: 1rem;
 }
 
-nav ul li {
-    margin: 0;
-}
-
 nav ul li a {
     color: #00FF87;
     text-decoration: none;
     font-weight: bold;
-}
-
-nav ul li a:hover {
-    color: #0D6EFD;
 }
 
 main {
@@ -43,37 +40,54 @@ main {
     text-align: center;
 }
 
-footer {
-    background: #1F1F1F;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
 }
 
-form label {
-    display: block;
-    margin: 0.5rem 0 0.2rem;
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-form input,
-form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.carousel {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
 }
 
-form button {
-    padding: 0.7rem 1.5rem;
-    border: none;
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    position: relative;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background: #00FF87;
+    border: none;
     color: #121212;
+    padding: 10px;
     cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
+    z-index: 10;
 }
 
-form button:hover {
-    background: #0D6EFD;
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
 }
