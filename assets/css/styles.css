@@ -1,93 +1,34 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
     background-color: #121212;
     color: #FFFFFF;
+    font-family: Arial, sans-serif;
 }
 
 header {
-    background: #1F1F1F;
-    padding: 1rem;
+    background-color: #1F1F1F;
     text-align: center;
-    position: relative;
-    transition: all 0.3s ease-in-out;
+    padding: 1rem;
 }
 
-header.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-nav ul {
+header nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 1rem;
 }
 
-nav ul li a {
-    color: #00FF87;
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
     text-decoration: none;
+    color: #00FF87;
     font-weight: bold;
 }
 
-main {
-    padding: 2rem;
+footer {
     text-align: center;
-}
-
-section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.carousel {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    width: 80%;
-    margin: auto;
-}
-
-.carousel-item {
-    min-width: 100%;
-    transition: transform 0.5s ease-in-out;
-    opacity: 0;
-    position: absolute;
-}
-
-.carousel-item.active {
-    opacity: 1;
-    position: relative;
-}
-
-button.prev,
-button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #00FF87;
-    border: none;
-    color: #121212;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-button.prev {
-    left: 10px;
-}
-
-button.next {
-    right: 10px;
+    padding: 1rem;
+    background-color: #1F1F1F;
 }
