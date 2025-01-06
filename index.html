@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
+<header>
+    <nav>
+        <button class="menu-toggle">☰</button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="parcours.html">Parcours</a></li>
+            <li><a href="projects.html">Projets</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact.html">Me contacter</a></li>
+        </ul>
+    </nav>
+</header>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Portfolio Mohamed</title>
+    <title>Accueil - Portfolio Mohamed Elnaggar</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+<a href="#section1">Voir la section 1</a>
+<section id="section1">
+    <h2>Section 1</h2>
+    <p>Contenu de la section 1.</p>
+</section>
 
 <body>
     <header>
-        <h1>Bienvenue sur mon Portfolio</h1>
         <nav>
             <ul>
                 <li><a href="about.html">À propos</a></li>
@@ -21,16 +38,19 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <section>
-            <h2>Étudiant en Cybersécurité</h2>
-            <p>Mon objectif est de devenir un expert en cybersécurité offensive.</p>
-            <img src="assets/images/logo.png" alt="Logo Portfolio" width="300">
+        <section class="hero">
+            <h1>Bienvenue sur mon Portfolio</h1>
+            <p>Étudiant en Cybersécurité | Passionné de Pentest</p>
+            <button onclick="scrollToSection('about')">En savoir plus</button>
         </section>
     </main>
+
     <footer>
-        <p>© 2025 Mohamed Elnaggar</p>
+        <p>&copy; 2025 Mohamed Elnaggar</p>
     </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 

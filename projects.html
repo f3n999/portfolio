@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
+<header>
+    <nav>
+        <button class="menu-toggle">☰</button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="parcours.html">Parcours</a></li>
+            <li><a href="projects.html">Projets</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact.html">Me contacter</a></li>
+        </ul>
+    </nav>
+</header>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets - Portfolio Mohamed</title>
+    <title>Projets - Portfolio Mohamed Elnaggar</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Mes Projets</h1>
         <nav>
             <ul>
-                <li><a href="about.html">À propos</a></li>
                 <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
                 <li><a href="parcours.html">Parcours</a></li>
-                <li><a href="projects.html">Projets</a></li>
                 <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="contact.html">Me contacter</a></li>
             </ul>
         </nav>
     </header>
+    <a href="#section1">Voir la section 1</a>
+    <section id="section1">
+        <h2>Section 1</h2>
+        <p>Contenu de la section 1.</p>
+    </section>
+    <p class="under-construction">En cours de construction...</p>
+
     <main>
-        <div class="carousel">
-            <div class="carousel-item active">
-                <img src="assets/images/image1.jpg" alt="Image 1">
-            </div>
-            <div class="carousel-item">
-                <img src="assets/images/image2.jpg" alt="Image 2">
-            </div>
-            <div class="carousel-item">
-                <img src="assets/images/image3.jpg" alt="Image 3">
-            </div>
-            <button class="prev" onclick="moveCarousel(-1)">❮</button>
-            <button class="next" onclick="moveCarousel(1)">❯</button>
-        </div>
+        <section class="projects">
+            <h1>Mes Projets</h1>
+            <p>Cette page est actuellement en cours de construction. Revenez bientôt pour découvrir mes projets
+                passionnants en cybersécurité et développement.</p>
+            <img src="assets/images/under-construction.png" alt="En cours de construction" class="construction-image">
+        </section>
     </main>
+
     <footer>
-        <p>© 2025 Mohamed Elnaggar</p>
+        <p>&copy; 2025 Mohamed Elnaggar</p>
     </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 

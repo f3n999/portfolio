@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
+<header>
+    <nav>
+        <button class="menu-toggle">☰</button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="parcours.html">Parcours</a></li>
+            <li><a href="projects.html">Projets</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact.html">Me contacter</a></li>
+        </ul>
+    </nav>
+</header>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À propos - Portfolio Mohamed</title>
+    <title>À propos - Portfolio Mohamed Elnaggar</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
     <header>
-        <h1>À propos</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -21,16 +33,33 @@
             </ul>
         </nav>
     </header>
+    <a href="#section1">Voir la section 1</a>
+    <section id="section1">
+        <h2>Section 1</h2>
+        <p>Contenu de la section 1.</p>
+    </section>
+
     <main>
-        <section>
-            <h2>Qui suis-je ?</h2>
-            <p>Je suis Mohamed Elnaggar, étudiant passionné par la cybersécurité avec une expertise en pentest et en
-                administration système.</p>
+        <section class="about">
+            <h1>À propos de moi</h1>
+            <p>Je m'appelle Mohamed Elnaggar, étudiant passionné en cybersécurité, actuellement en Bachelor 3 à Oteria
+                Cyber School.
+                Mon objectif est d'intégrer la G19 et de devenir un expert en pentest et en cybersécurité offensive.</p>
+            <p>Avec une solide expérience académique et pratique, je me spécialise dans les domaines suivants :</p>
+            <ul>
+                <li>Analyse réseau et sécurisation d'infrastructures</li>
+                <li>Administration système : Active Directory, DHCP, LDAP</li>
+                <li>Hacking éthique : Nmap, Metasploit, CrackMapExec</li>
+                <li>Programmation : Python, PHP, HTML/CSS, JavaScript</li>
+            </ul>
+            <img src="assets/images/logo.png" alt="Logo Portfolio" class="about-logo">
         </section>
     </main>
+
     <footer>
-        <p>© 2025 Mohamed Elnaggar</p>
+        <p>&copy; 2025 Mohamed Elnaggar</p>
     </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 
