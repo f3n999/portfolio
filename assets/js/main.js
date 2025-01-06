@@ -1,35 +1,41 @@
-// main.js
-
-// Smooth scrolling for navigation links
+// Smooth Scroll for Navigation Links
 document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').replace('.html', '');
-        const targetElement = document.querySelector(targetId);
+    link.addEventListener('click', event => {
+        // Prevent default link behavior
+        event.preventDefault();
 
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop,
-                behavior: 'smooth'
-            });
+        // Get the target section ID
+        const sectionId = link.getAttribute('href').replace('.html', '');
+        const targetSection = document.querySelector(sectionId);
+
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            window.location.href = link.getAttribute('href');
         }
     });
 });
 
-// Toggle theme (light/dark mode)
-const toggleThemeButton = document.createElement('button');
-toggleThemeButton.textContent = "Changer le thème";
-toggleThemeButton.classList.add('theme-toggle');
-
-document.body.appendChild(toggleThemeButton);
-
-toggleThemeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-});
-
-// Display "in progress" message for incomplete pages
-document.querySelectorAll('.in-progress').forEach(element => {
-    element.addEventListener('click', function () {
-        alert("Cette section est en cours de construction. Revenez bientôt !");
+// Toggle active link in navigation
+const navLinks = document.querySelectorAll('nav ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        link.classList.add('active');
     });
 });
+
+// Form Validation (for Contact Page)
+const form = document.querySelector('form');
+if (form) {
+    form.addEventListener('submit', event => {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+            alert('Veuillez remplir tous les champs.');
+            event.preventDefault();
+        }
+    });
+}
