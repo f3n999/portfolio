@@ -1,23 +1,11 @@
+<!-- contact.html -->
 <!DOCTYPE html>
 <html lang="fr">
-<header>
-    <nav>
-        <button class="menu-toggle">☰</button>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="about.html">À propos</a></li>
-            <li><a href="parcours.html">Parcours</a></li>
-            <li><a href="projects.html">Projets</a></li>
-            <li><a href="certifications.html">Certifications</a></li>
-            <li><a href="contact.html">Me contacter</a></li>
-        </ul>
-    </nav>
-</header>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Me contacter - Portfolio Mohamed Elnaggar</title>
+    <title>Me Contacter - Portfolio Mohamed Elnaggar</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
@@ -30,38 +18,27 @@
                 <li><a href="parcours.html">Parcours</a></li>
                 <li><a href="projects.html">Projets</a></li>
                 <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="contact.html">Me contacter</a></li>
             </ul>
         </nav>
     </header>
-    <a href="#section1">Voir la section 1</a>
-    <section id="section1">
-        <h2>Section 1</h2>
-        <p>Contenu de la section 1.</p>
-    </section>
 
     <main>
         <section class="contact">
             <h1>Contactez-moi</h1>
-            <p>N’hésitez pas à me contacter pour toute opportunité professionnelle ou question.</p>
+            <p>Vous pouvez me joindre via ce formulaire :</p>
+            <form action="#" method="post">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
 
-            <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Votre email" required>
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
 
                 <button type="submit">Envoyer</button>
             </form>
-
-            <div class="social-links">
-                <h2>Retrouvez-moi sur</h2>
-                <a href="https://www.linkedin.com/in/mohamed-elnaggar/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/f3n999" target="_blank">GitHub</a>
-            </div>
         </section>
     </main>
 

@@ -1,49 +1,35 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector("nav ul");
+// main.js
 
-    menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-    });
-});
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute("href").substring(1);
-        document.getElementById(targetId)?.scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});
-document.addEventListener("scroll", () => {
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    const windowHeight = window.innerHeight;
+        const targetId = this.getAttribute('href').replace('.html', '');
+        const targetElement = document.querySelector(targetId);
 
-    elements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 100) {
-            el.classList.add("visible");
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
         }
     });
 });
-document.addEventListener("scroll", () => {
-    const header = document.querySelector("header");
-    const scrollY = window.scrollY;
 
-    if (scrollY > 0) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
+// Toggle theme (light/dark mode)
+const toggleThemeButton = document.createElement('button');
+toggleThemeButton.textContent = "Changer le thème";
+toggleThemeButton.classList.add('theme-toggle');
+
+document.body.appendChild(toggleThemeButton);
+
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
 });
-document.addEventListener("DOMContentLoaded", () => {
-    const underConstruction = document.querySelector(".under-construction");
-    if (underConstruction) {
-        let dots = 0;
-        setInterval(() => {
-            dots = (dots + 1) % 4; // Alterne entre 0, 1, 2, 3
-            underConstruction.textContent = "En cours de construction" + ".".repeat(dots);
-        }, 500);
-    }
+
+// Display "in progress" message for incomplete pages
+document.querySelectorAll('.in-progress').forEach(element => {
+    element.addEventListener('click', function () {
+        alert("Cette section est en cours de construction. Revenez bientôt !");
+    });
 });
