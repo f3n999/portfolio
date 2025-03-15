@@ -1,36 +1,27 @@
-.projects {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.project-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.card {
+.project-box {
     background-color: var(--card-bg);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    width: 100%;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.card:hover {
-    transform: translateY(-10px);
+.project-box:hover {
+    transform: translateY(-5px);
     background-color: var(--card-hover);
 }
 
-.card .button {
+.project-box .button {
     display: inline-block;
     background-color: var(--accent-green);
     color: var(--background);
@@ -42,6 +33,6 @@
     transition: background-color 0.3s ease;
 }
 
-.card .button:hover {
+.project-box .button:hover {
     background-color: var(--accent-blue);
 }
