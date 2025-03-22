@@ -2,61 +2,76 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfolio de Mohamed Elnaggar, étudiant en cybersécurité spécialisé en sécurité offensive et pentest.">
-    <title>Accueil - Mohamed Elnaggar</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Elnaggar - Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/helper.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <script src="assets/js/gsap.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="parcours.html">Parcours</a></li>
-                <li><a href="projects.html">Projets</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="contact.html">Me contacter</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section class="hero">
-            <h1>Bienvenue sur mon Portfolio</h1>
-            <p>
-                Étudiant en Bachelor 3 cybersécurité à <strong>Oteria Cyber School</strong>, spécialisé en sécurité
-                offensive, pentest et administration réseau. Actuellement en recherche active d'une alternance à partir
-                de septembre 2025 pour renforcer mes compétences au sein d'un <strong>SOC</strong> ou d'une équipe de
-                pentest dynamique.
-            </p>
-            <a class="button" href="assets/M(CV ELNAGGAR) (1).pdf" download="CV_ELNAGGAR_MOHAMED.pdf">Télécharger mon
-                CV</a>
-            <a class="button" href="projects.html">Découvrir mes projets</a>
-        </section>
+  <section id="home" class="hero">
+    <div class="container text-center">
+      <img src="assets/img/moi.jpg" alt="Photo de Mohamed" class="profile-pic">
+      <h1 class="big-title">Mohamed Elnaggar</h1>
+      <p class="subtitle">Étudiant en cybersécurité | Pentest & Réseaux</p>
+      <div class="cta-buttons">
+        <a href="assets/CV_ELNAGGAR_MOHAMED.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
+        <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank" class="btn btn-outline-light">LinkedIn</a>
+        <a href="mailto:mohamed.elnaggar@oteria.fr" class="btn btn-outline-light">Email</a>
+      </div>
+    </div>
+  </section>
 
-        <section class="cv-section">
-            <h2>Pourquoi moi ?</h2>
-            <p>
-                Passionné, curieux et rigoureux, je combine compétences techniques pointues et esprit d’équipe pour
-                assurer efficacement la sécurité des infrastructures et des systèmes informatiques.
-            </p>
-            <ul>
-                <li>✅ <strong>Expériences :</strong> Administration Système, Pentest, Sécurité Réseau</li>
-                <li>✅ <strong>Certifications :</strong> CEH, Cisco CCNA 1 & 2, Cybersecurity Essentials, TryHackMe</li>
-                <li>✅ <strong>Soft Skills :</strong> Communication, Travail en équipe, Adaptabilité</li>
-            </ul>
-        </section>
-    </main>
+  <footer>
+    <p>&copy; 2025 Mohamed Elnaggar. Tous droits réservés.</p>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Mohamed Elnaggar</p>
-    </footer>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
 
-    <script src="assets/js/main.js"></script>
+    gsap.from(".profile-pic", {
+      opacity: 0,
+      y: -50,
+      duration: 1.2,
+      ease: "power2.out"
+    });
+
+    gsap.from(".big-title", {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      delay: 0.3
+    });
+
+    gsap.from(".subtitle", {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      delay: 0.6
+    });
+
+    gsap.from(".cta-buttons", {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      delay: 0.9
+    });
+  </script>
 </body>
 
 </html>
