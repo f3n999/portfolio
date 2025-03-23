@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Détails du Stage de Mohamed Elnaggar">
     <title>Stage - Mohamed Elnaggar</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
@@ -12,35 +13,50 @@
     <header>
         <nav>
             <ul>
-                <li><a href="/portfolio/index.html">Accueil</a></li>
-                <li><a href="/portfolio/projet.html">Retour aux projets</a></li>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../about.html">À propos</a></li>
+                <li><a href="../parcours.html">Parcours</a></li>
+                <li><a href="../projet.html">Projets</a></li>
+                <li><a href="../certifications.html">Certifications</a></li>
+                <li><a href="../contact.html">Me contacter</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="stage-details">
-            <h1>Mon Expérience en Stage</h1>
-            <div class="stage-content">
-                <p><strong>Entreprise :</strong> [Nom de l'entreprise]</p>
-                <p><strong>Durée :</strong> [3 Mois - Dates]</p>
-                <p><strong>Outils utilisés :</strong> Active Directory, DHCP, Linux, SIEM, Pentest Tools</p>
-                <p><strong>Missions :</strong></p>
-                <ul>
-                    <li>Mise en place et durcissement de serveurs Linux</li>
-                    <li>Gestion des utilisateurs et sécurisation Active Directory</li>
-                    <li>Détection et réponse aux incidents de cybersécurité</li>
-                    <li>Tests d’intrusion et rapport d’audit</li>
-                </ul>
+        <section id="stage" class="hero">
+            <div class="container text-center">
+                <h1 class="big-title">Stage</h1>
+                <p class="subtitle">Détails du Stage</p>
+                <p>Voici les détails de mon stage...</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mohamed Elnaggar</p>
+        <p>&copy; 2025 Mohamed Elnaggar. Tous droits réservés.</p>
     </footer>
 
+    <script src="../assets/js/gsap.js"></script>
+    <script src="../assets/js/ScrollTrigger.min.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".big-title", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.3
+        });
+
+        gsap.from(".subtitle", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.6
+        });
+    </script>
 </body>
 
 </html>
