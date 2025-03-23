@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohamed Elnaggar - Portfolio</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <script src="assets/js/gsap.js"></script>
   <script src="assets/js/ScrollTrigger.min.js"></script>
-  <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -17,32 +17,62 @@
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="about.html">À propos</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
         <li><a href="projet.html">Projets</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section id="home" class="hero">
-      <img src="assets/images/moi.jpg" alt="Photo de Mohamed" class="profile-pic" />
+  <section id="home" class="hero">
+    <div class="container text-center">
+      <img src="assets/img/moi.jpg" alt="Photo de Mohamed" class="profile-pic" style="width:120px;height:120px;" />
       <h1 class="big-title">Mohamed Elnaggar</h1>
-      <p class="subtitle">Étudiant en cybersécurité | Pentest & Réseaux</p>
+      <p class="subtitle" style="text-align:center;">Étudiant en cybersécurité | Pentest & Réseaux</p>
       <div class="cta-buttons">
-        <a href="assets/Mohamed_Elnaggar_CV.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
+        <a href="assets/CV_ELNAGGAR_MOHAMED.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
         <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank" class="btn btn-outline-light">LinkedIn</a>
         <a href="mailto:mohamed.elnaggar@oteria.fr" class="btn btn-outline-light">Email</a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2025 Mohamed Elnaggar. Tous droits réservés.</p>
   </footer>
-  <script src="assets/js/gsap.js"></script>
-  <script src="assets/js/ScrollTrigger.min.js"></script>
-  <script src="assets/js/main.js"></script>
 
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".profile-pic", {
+      opacity: 0,
+      y: -50,
+      duration: 1.2,
+      ease: "power2.out"
+    });
+
+    gsap.from(".big-title", {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      delay: 0.3
+    });
+
+    gsap.from(".subtitle", {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      delay: 0.6
+    });
+
+    gsap.from(".cta-buttons", {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      delay: 0.9
+    });
+  </script>
 </body>
 
 </html>
