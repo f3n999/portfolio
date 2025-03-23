@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Détails du Stage 1 de Mohamed Elnaggar">
+    <title>Stage 1 - Mohamed Elnaggar</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../about.html">À propos</a></li>
+                <li><a href="../parcours.html">Parcours</a></li>
+                <li><a href="../projects.html">Projets</a></li>
+                <li><a href="../certifications.html">Certifications</a></li>
+                <li><a href="../contact.html">Me contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="stage1" class="hero">
+            <div class="container text-center">
+                <h1 class="big-title">Stage 1</h1>
+                <p class="subtitle">Détails du Stage 1</p>
+                <p>Voici les détails de mon premier stage...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mohamed Elnaggar. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../assets/js/gsap.js"></script>
+    <script src="../assets/js/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".big-title", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.3
+        });
+
+        gsap.from(".subtitle", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.6
+        });
+    </script>
+</body>
+
+</html>

@@ -7,6 +7,264 @@
     <meta name="description" content="En savoir plus sur Mohamed Elnaggar, étudiant en cybersécurité.">
     <title>À propos - Mohamed Elnaggar</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        :root {
+            --background: #121212;
+            --text-primary: #FFFFFF;
+            --accent-blue: #0D6EFD;
+            --accent-green: #00FF87;
+            --card-bg: #1F1F1F;
+            --card-hover: #292929;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 0;
+        }
+
+        header ul li a {
+            font-weight: bold;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        header ul li a:hover {
+            color: var(--accent-green);
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-green);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin-right: 20px;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            background-color: var(--card-bg);
+            padding: 10px;
+            color: #888;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--text-primary);
+        }
+
+        p,
+        li {
+            max-width: 800px;
+            margin: 0 auto 15px auto;
+            text-align: justify;
+        }
+
+        img {
+            max-width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-green);
+            color: #000;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-blue);
+            color: #fff;
+        }
+
+        .intro-text {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .experience {
+            background-color: var(--card-bg);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent-green);
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .experience:hover {
+            transform: translateY(-3px);
+        }
+
+        .experience h3 {
+            color: var(--accent-green);
+            margin-bottom: 10px;
+        }
+
+        .experience p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .experience ul {
+            padding-left: 20px;
+            list-style: disc;
+            margin-top: 0;
+        }
+
+        .experience ul li {
+            margin-bottom: 8px;
+        }
+
+        /* New styles */
+        .stages {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .stages h1 {
+            font-size: 2rem;
+            color: var(--accent-green);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero {
+            padding: 100px 20px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--background);
+            min-height: 80vh;
+        }
+
+        .hero .big-title {
+            font-size: 2.5rem;
+            color: var(--accent-green);
+            margin-bottom: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .hero p {
+            max-width: 700px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-green);
+            color: #000;
+        }
+
+        .btn-outline-light {
+            border: 2px solid var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .btn-outline-light:hover {
+            background-color: var(--accent-green);
+            color: #000;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,45 +282,87 @@
     </header>
 
     <main>
-        <section>
-            <h1>À propos de moi</h1>
-            <p>
-                Je m’appelle Mohamed Elnaggar, j’ai 19 ans, et je suis étudiant en cybersécurité.  
-                J’avance chaque jour avec un objectif simple : devenir un professionnel capable de sécuriser des systèmes,  
-                d’identifier les failles, et de proposer des solutions concrètes.
-            </p>
-            <p>
-                Curieux, déterminé et toujours en train d’apprendre, je me forme avec passion sur des plateformes comme TryHackMe et Hack The Box.  
-                J’aime comprendre comment les systèmes fonctionnent… et comment les attaquer pour mieux les défendre.
-            </p>
-            <p>
-                Ce portfolio est une vitrine de ce que j’ai appris, de ce que je construis, et de ce que je peux apporter.  
-                Bienvenue dans mon univers.
-            </p>
-    
-            <h2>Ce que je fais actuellement</h2>
-            <p>
-                Je suis en BTS SIO option SISR, où je me spécialise dans l’administration réseau, les systèmes d’exploitation,  
-                et la sécurité informatique. Je complète cette formation par des projets personnels et des labs techniques.  
-                J’envisage d'intégrer l’Oteria Cyber School en Bachelor 3 pour approfondir mes compétences en cybersécurité offensive.
-            </p>
-            <h2>Ce que je recherche</h2>
-            <p>
-                Je suis à la recherche d'une alternance en cybersécurité ou en réseau pour la rentrée 2025.  
-                Mon objectif est de continuer à apprendre sur le terrain, encadré par des professionnels passionnés,  
-                tout en apportant ma rigueur, ma curiosité et mon envie de progresser.
-            </p>
+        <section id="about" class="hero">
+            <div class="container text-center">
+                <h1 class="big-title">À propos de moi</h1>
+                <p class="subtitle">Étudiant en cybersécurité | Passionné de réseau et de sécurité</p>
+                <p>Je m’appelle Mohamed Elnaggar, j’ai 19 ans, et je suis étudiant en cybersécurité.
+                    J’avance chaque jour avec un objectif simple : devenir un professionnel capable de sécuriser des
+                    systèmes,
+                    d’identifier les failles, et de proposer des solutions concrètes.</p>
+                <p>Curieux, déterminé et toujours en train d’apprendre, je me forme avec passion sur des plateformes
+                    comme TryHackMe et Hack The Box.
+                    J’aime comprendre comment les systèmes fonctionnent… et comment les attaquer pour mieux les
+                    défendre.</p>
+                <p>Ce portfolio est une vitrine de ce que j’ai appris, de ce que je construis, et de ce que je peux
+                    apporter.
+                    Bienvenue dans mon univers.</p>
+            </div>
+        </section>
+
+        <section class="stages">
+            <div class="container">
+                <h2>Ce que je fais actuellement</h2>
+                <p>Je suis en BTS SIO option SISR, où je me spécialise dans l’administration réseau, les systèmes
+                    d’exploitation,
+                    et la sécurité informatique. Je complète cette formation par des projets personnels et des labs
+                    techniques.
+                    J’envisage d'intégrer l’Oteria Cyber School en Bachelor 3 pour approfondir mes compétences en
+                    cybersécurité offensive.</p>
+                <h2>Ce que je recherche</h2>
+                <p>Je suis à la recherche d'une alternance en cybersécurité ou en réseau pour la rentrée 2025.
+                    Mon objectif est de continuer à apprendre sur le terrain, encadré par des professionnels passionnés,
+                    tout en apportant ma rigueur, ma curiosité et mon envie de progresser.</p>
+            </div>
         </section>
     </main>
-    
 
     <footer>
-        <p>&copy; 2025 Mohamed Elnaggar</p>
+        <p>&copy; 2025 Mohamed Elnaggar. Tous droits réservés.</p>
     </footer>
+
     <script src="assets/js/gsap.js"></script>
     <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
-    
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".big-title", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.3
+        });
+
+        gsap.from(".subtitle", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.6
+        });
+
+        gsap.from(".stages h2", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.9,
+            scrollTrigger: {
+                trigger: ".stages h2",
+                start: "top 80%"
+            }
+        });
+
+        gsap.from(".stages p", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 1.2,
+            scrollTrigger: {
+                trigger: ".stages p",
+                start: "top 80%"
+            }
+        });
+    </script>
 </body>
 
 </html>
