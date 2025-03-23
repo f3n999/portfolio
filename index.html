@@ -29,13 +29,19 @@
   <main>
     <section id="home" class="hero">
       <div class="container text-center">
-        <img src="assets/img/moi.jpg" alt="Photo de Mohamed" class="profile-pic" style="width:120px;height:120px;" />
         <h1 class="big-title">Mohamed Elnaggar</h1>
-        <p class="subtitle">Étudiant en cybersécurité | Pentest & Réseaux</p>
+        <p class="subtitle">Étudiant en cybersécurité | Passionné de réseau et de sécurité</p>
+        <p>Bienvenue sur mon portfolio. Je m'appelle Mohamed, étudiant en cybersécurité et passionné par les systèmes, les réseaux et l’analyse des vulnérabilités. Je me forme activement sur des plateformes comme TryHackMe et Hack The Box tout en construisant des projets concrets. Mon objectif ? Rejoindre une entreprise où je pourrai renforcer mes compétences et contribuer à sa sécurité.</p>
         <div class="cta-buttons">
           <a href="assets/CV_ELNAGGAR_MOHAMED.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
           <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank" class="btn btn-outline-light">LinkedIn</a>
           <a href="mailto:mohamed.elnaggar@oteria.fr" class="btn btn-outline-light">Email</a>
+          <p class="intro-text">
+            Je construis petit à petit mon chemin dans la cybersécurité.<br>
+            Entre projets concrets, labos techniques et certifications reconnues,<br>
+            je me forme avec passion pour devenir un professionnel capable de faire la différence.
+          </p>
+          
         </div>
       </div>
     </section>
@@ -47,13 +53,6 @@
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from(".profile-pic", {
-      opacity: 0,
-      y: -50,
-      duration: 1.2,
-      ease: "power2.out"
-    });
 
     gsap.from(".big-title", {
       opacity: 0,
