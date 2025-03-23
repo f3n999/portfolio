@@ -1,41 +1,73 @@
-// Smooth Scroll for Navigation Links
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', event => {
-        // Prevent default link behavior
-        event.preventDefault();
+// Initialisation des animations GSAP avec ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
-        // Get the target section ID
-        const sectionId = link.getAttribute('href').replace('.html', '');
-        const targetSection = document.querySelector(sectionId);
-
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            window.location.href = link.getAttribute('href');
-        }
-    });
+// Animation d'introduction commune
+gsap.from("header", {
+    opacity: 0,
+    y: -30,
+    duration: 1.2,
+    ease: "power2.out"
 });
 
-// Toggle active link in navigation
-const navLinks = document.querySelectorAll('nav ul li a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.forEach(nav => nav.classList.remove('active'));
-        link.classList.add('active');
-    });
+gsap.from("footer", {
+    opacity: 0,
+    y: 30,
+    duration: 1.2,
+    ease: "power2.out"
 });
 
-// Form Validation (for Contact Page)
-const form = document.querySelector('form');
-if (form) {
-    form.addEventListener('submit', event => {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
+// Animation spécifique pour la page d'accueil (si l'élément existe)
+if(document.querySelector(".hero")) {
+    gsap.from(".hero .profile-pic", {
+        opacity: 0,
+        scale: 0.8,
+        duration: 1.2,
+        delay: 0.5
+    });
 
-        if (!name || !email || !message) {
-            alert('Veuillez remplir tous les champs.');
-            event.preventDefault();
-        }
+    gsap.from(".hero .big-title", {
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        delay: 0.7
+    });
+
+    gsap.from(".hero .subtitle", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.9
+    });
+
+    gsap.from(".hero .cta-buttons", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 1.1
     });
 }
+
+// Animation de scroll générique sur chaque page pour les sections principales
+gsap.utils.toArray('main section').forEach(section => {
+    gsap.from(section, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        }
+    });
+});
+
+// Animation pour boutons interactifs généraux
+document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+        gsap.to(btn, { scale: 1.1, duration: 0.2 });
+    });
+
+    btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { scale: 1, duration: 0.2 });
+    });
+});
