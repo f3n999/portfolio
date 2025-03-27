@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Détails du Stage 3 : Administrateur Système, Réseau & Sécurité">
+    <title>Stage 3 - Administrateur Système, Réseau & Sécurité</title>
+    <style>
+        :root {
+            --background: #121212;
+            --text-primary: #FFFFFF;
+            --accent-blue: #0D6EFD;
+            --accent-green: #00FF87;
+            --card-bg: #1F1F1F;
+            --card-hover: #292929;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 0;
+        }
+
+        header ul li a {
+            font-weight: bold;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        header ul li a:hover {
+            color: var(--accent-green);
+        }
+
+        main {
+            flex: 1;
+            padding-top: 80px;
+            /* To avoid content being hidden behind the fixed header */
+        }
+
+        footer {
+            background-color: var(--card-bg);
+            padding: 10px;
+            color: #888;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--accent-green);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .stage-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .stage-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .stage-text h2 {
+            color: var(--accent-green);
+            margin-bottom: 10px;
+        }
+
+        .stage-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .stage-text ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .stage-text ul li {
+            margin-bottom: 10px;
+        }
+
+        .stage-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stage-image img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--accent-green);
+        }
+
+        .gallery {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .gallery-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 30%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--accent-green);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            /* Agrandissement au survol */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../about.html">À propos</a></li>
+                <li><a href="../parcours.html">Parcours</a></li>
+                <li><a href="../projet.html">Projets</a></li>
+                <li><a href="../stage.html">Stages</a></li>
+                <li><a href="../certifications.html">Certifications</a></li>
+                <li><a href="../contact.html">Me contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="stage-details">
+            <div class="stage-text">
+                <h2>Administrateur Système, Réseau & Sécurité</h2>
+                <p><strong>Période :</strong> Janvier – Mars 2025 (8 semaines)</p>
+                <ul>
+                    <li>Administration de serveurs Windows & Active Directory.</li>
+                    <li>Installation et gestion de serveurs Hyper-V et VMs.</li>
+                    <li>Déploiement sur Proxmox, migration de machines virtuelles.</li>
+                    <li>Reconfiguration IP, supervision réseau et sécurité.</li>
+                    <li>Migration AD Windows 2012 vers 2022.</li>
+                    <li>Mise à jour et maintenance des équipements réseau (switchs, routeurs).</li>
+                    <li>Configuration de pare-feu et VPN pour sécuriser les connexions.</li>
+                    <li>Gestion des sauvegardes et restauration des données.</li>
+                    <li>Rédaction de documentations techniques pour les procédures IT.</li>
+                </ul>
+            </div>
+            <div class="stage-image">
+                <img src="image-stage/dauphine.png" alt="Université de Dauphine">
+            </div>
+        </section>
+
+        <section class="gallery">
+            <h2 style="text-align: center; color: var(--accent-green);">Galerie d'images</h2>
+            <div class="gallery-row">
+                <img src="image-stage/dauphine-1.JPEG" alt="Image 1">
+                <img src="image-stage/dauphine-2.JPEG" alt="Image 2">
+                <img src="image-stage/dauphine-3.JPEG" alt="Image 3">
+            </div>
+            <div class="gallery-row">
+                <img src="image-stage/dauphine-docker .JPEG" alt="Image 4">
+                <img src="image-stage/dauphine-hyper-v.JPEG" alt="Image 5">
+                <img src="image-stage/dauphine-smtp-2.JPEG" alt="Image 6">
+            </div>
+            <div class="gallery-row">
+                <img src="image-stage/dauphine-sys.JPEG" alt="Image 7">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mohamed Elnaggar</p>
+    </footer>
+
+    <script src="../assets/js/gsap.js"></script>
+    <script src="../assets/js/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".big-title", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.3
+        });
+
+        gsap.from(".subtitle", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.6
+        });
+    </script>
+</body>
+
+</html>
