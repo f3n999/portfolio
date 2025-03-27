@@ -140,6 +140,16 @@
             background-color: var(--accent-blue);
             color: #fff;
         }
+
+        .status {
+            margin-top: 10px;
+        }
+
+        .status-label {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -162,20 +172,22 @@
         <section class="projects">
             <h1>Mes Projets</h1>
             <div class="project-list">
+                <!-- Projet 1 -->
                 <div class="project-box">
-                    <h3>Projet 1</h3>
-                    <p>Configuration d’un réseau sécurisé avec Active Directory et services DHCP.</p>
-                    <a class="button" href="projets/projet1.html">Voir plus</a>
+                    <h3>Projet 1 : Infrastructure + Active Directory</h3>
+                    <p>Déploiement d'une infrastructure réseau sécurisée avec Active Directory, GPO, DHCP et DNS.</p>
+                    <div class="status">
+                        <span class="status-label">En préparation</span>
+                    </div>
                 </div>
+                <!-- Projet 2 -->
                 <div class="project-box">
-                    <h3>Projet 2</h3>
-                    <p>Simulation d’attaques réseau sur TryHackMe avec exploitation de vulnérabilités.</p>
-                    <a class="button" href="projets/projet2.html">Voir plus</a>
-                </div>
-                <div class="project-box">
-                    <h3>Stage</h3>
-                    <p>Mise en place d’un serveur Linux avec durcissement de la sécurité.</p>
-                    <a class="button" href="projets/stage.html">Voir plus</a>
+                    <h3>Projet 2 : Wazuh</h3>
+                    <p>Mise en place d’un SIEM avec Wazuh pour la supervision et la sécurité des systèmes Windows/Linux.
+                    </p>
+                    <div class="status">
+                        <span class="status-label">En préparation</span>
+                    </div>
                 </div>
             </div>
         </section>
