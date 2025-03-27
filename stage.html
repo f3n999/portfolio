@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Certifications de Mohamed Elnaggar en cybersécurité.">
-    <title>Certifications - Mohamed Elnaggar</title>
+    <meta name="description" content="Stages de Mohamed Elnaggar en cybersécurité et administration réseau.">
+    <title>Stages - Mohamed Elnaggar</title>
     <style>
         :root {
             --background: #121212;
@@ -74,33 +74,27 @@
             margin-top: auto;
         }
 
-        h1,
-        h2,
-        h3 {
-            color: var(--text-primary);
-        }
-
-        .certifications {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .certifications h1 {
+        h1 {
             font-size: 2rem;
             color: var(--accent-green);
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .certification-list {
+        .stages {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .stage-list {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
 
-        .certification-box {
+        .stage-box {
             background-color: var(--card-bg);
             padding: 20px;
             border-radius: 10px;
@@ -109,52 +103,36 @@
             width: 100%;
             max-width: 300px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            height: 300px;
-            /* Make the box square */
         }
 
-        .certification-box:hover {
+        .stage-box:hover {
             transform: translateY(-3px);
         }
 
-        .certification-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
+        .stage-box h3 {
+            color: var(--accent-green);
+            margin-bottom: 10px;
         }
 
-        .certification-box:hover img {
-            transform: scale(1.1);
+        .stage-box p {
+            font-style: italic;
+            margin-bottom: 10px;
         }
 
-        .certification-box .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            border-radius: 10px;
-        }
-
-        .certification-box:hover .overlay {
-            opacity: 1;
-        }
-
-        .overlay p {
-            margin: 0;
-            font-size: 1.2rem;
+        .stage-box .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
             font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background-color: var(--accent-green);
+            color: #000;
+        }
+
+        .stage-box .button:hover {
+            background-color: var(--accent-blue);
+            color: #fff;
         }
     </style>
 </head>
@@ -165,9 +143,9 @@
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="about.html">À propos</a></li>
-                <li><a href="stage.html">Stages</a></li>
                 <li><a href="parcours.html">Parcours</a></li>
                 <li><a href="projet.html">Projets</a></li>
+                <li><a href="stage.html">Stages</a></li>
                 <li><a href="certifications.html">Certifications</a></li>
                 <li><a href="contact.html">Me contacter</a></li>
             </ul>
@@ -175,57 +153,32 @@
     </header>
 
     <main>
-        <section class="certifications">
-            <h1>Mes Certifications</h1>
-            <div class="certification-list">
-                <div class="certification-box">
-                    <img src="assets/images/THM-0.jpg" alt="TryHackMe Certification">
-                    <div class="overlay">
-                        <p>TryHackMe Certification</p>
-                    </div>
+        <section class="stages">
+            <h1>Mes Stages</h1>
+            <div class="stage-list">
+                <div class="stage-box">
+                    <h3>Stage 1</h3>
+                    <p>Stagiaire Web – Paris</p>
+                    <a class="button" href="stage/stage1.html">Voir plus</a>
                 </div>
-                <div class="certification-box">
-                    <img src="assets/images/mohamedelnaggar-SIO1 - Cybersecu-certificate_page-0001.jpg"
-                        alt="SIO1 Cybersecurity Certification">
-                    <div class="overlay">
-                        <p>SIO1 Cybersecurity Certification</p>
-                    </div>
+                <div class="stage-box">
+                    <h3>Stage 2</h3>
+                    <p>Technicien Support SP L2</p>
+                    <a class="button" href="stage/stage2.html">Voir plus</a>
                 </div>
-                <div class="certification-box">
-                    <img src="assets/images/EHE.jpg" alt="EHE Certification">
-                    <div class="overlay">
-                        <p>EHE Certification</p>
-                    </div>
+                <div class="stage-box">
+                    <h3>Stage 3</h3>
+                    <p>Administrateur Système, Réseau & Sécurité</p>
+                    <a class="button" href="stage/stage3.html">Voir plus</a>
                 </div>
-                <!-- Ajoutez d'autres certifications ici -->
+                <!-- Ajoutez d'autres stages ici -->
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mohamed Elnaggar. Tous droits réservés.</p>
+        <p>&copy; 2025 Mohamed Elnaggar</p>
     </footer>
-
-    <script src="assets/js/gsap.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from(".big-title", {
-            opacity: 0,
-            y: 40,
-            duration: 1,
-            delay: 0.3
-        });
-
-        gsap.from(".subtitle", {
-            opacity: 0,
-            y: 40,
-            duration: 1,
-            delay: 0.6
-        });
-    </script>
 </body>
 
 </html>
