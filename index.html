@@ -202,6 +202,63 @@
       color: #FFF;
       cursor: pointer;
     }
+
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      header ul {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .hero .big-title {
+        font-size: 2rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero .big-title {
+        font-size: 1.8rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-pic {
+        width: 80px;
+        height: 80px;
+      }
+
+      .hero .big-title {
+        font-size: 1.5rem;
+      }
+
+      .hero .subtitle {
+        font-size: 0.9rem;
+      }
+
+      .cta-buttons a,
+      .cta-buttons button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 

@@ -104,20 +104,19 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            height: 350px;
-            /* Augmenté pour inclure le bouton */
         }
 
         .certification-box img {
             width: 100%;
-            height: 250px;
-            /* Taille fixe pour l'image */
+            height: 200px;
             object-fit: cover;
             border-radius: 10px;
             transition: transform 0.3s ease;
             cursor: pointer;
-            z-index: 1;
-            /* Assure que l'image ne bloque pas le bouton */
+        }
+
+        .certification-box:hover {
+            transform: translateY(-3px);
         }
 
         .certification-box .view-button {
@@ -130,36 +129,11 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
-            position: relative;
-            z-index: 2;
-            /* Assure que le bouton est au-dessus de tout */
         }
 
         .certification-box .view-button:hover {
             background-color: var(--accent-blue);
             color: #fff;
-        }
-
-        .certification-box .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            border-radius: 10px;
-            z-index: 1;
-            /* Assure que l'overlay ne bloque pas le bouton */
-        }
-
-        .certification-box:hover .overlay {
-            opacity: 1;
         }
 
         /* Fullscreen modal styles */
@@ -171,28 +145,21 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.9);
-            /* Fond plus sombre */
-            z-index: 2000;
             justify-content: center;
             align-items: center;
         }
 
         .modal img {
             max-width: 90%;
-            /* L'image occupe au maximum 90% de la largeur de l'écran */
             max-height: 90%;
-            /* L'image occupe au maximum 90% de la hauteur de l'écran */
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            /* Ajout d'une ombre pour un meilleur rendu */
         }
 
         .modal:target {
             display: flex;
-            /* Affiche le modal lorsqu'il est ciblé */
         }
 
-        /* Bouton de fermeture */
         .modal-close {
             position: absolute;
             top: 20px;
@@ -204,13 +171,52 @@
             padding: 5px 10px;
             border-radius: 5px;
             text-decoration: none;
-            z-index: 3000;
             transition: background-color 0.3s ease;
         }
 
         .modal-close:hover {
             background: var(--accent-blue);
             color: #fff;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .certification-box {
+                max-width: 250px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .certification-box {
+                max-width: 200px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .certification-box img {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .certification-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .certification-box {
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -240,9 +246,6 @@
                     <a href="#modal1">
                         <img src="assets/images/THM-0.png" alt="TryHackMe Certification">
                     </a>
-                    <div class="overlay">
-                        <p>TryHackMe Certification</p>
-                    </div>
                     <a href="#modal1" class="view-button">Afficher</a>
                 </div>
                 <!-- Certification 2 -->
@@ -250,9 +253,6 @@
                     <a href="#modal2">
                         <img src="assets/images/EHE.png" alt="EHE Certification">
                     </a>
-                    <div class="overlay">
-                        <p>EHE Certification</p>
-                    </div>
                     <a href="#modal2" class="view-button">Afficher</a>
                 </div>
                 <!-- Certification 3 -->
@@ -260,9 +260,6 @@
                     <a href="#modal3">
                         <img src="assets/images/udemy.png" alt="Udemy Certification">
                     </a>
-                    <div class="overlay">
-                        <p>Udemy Certification</p>
-                    </div>
                     <a href="#modal3" class="view-button">Afficher</a>
                 </div>
                 <!-- Certification 4 -->
@@ -270,9 +267,6 @@
                     <a href="#modal4">
                         <img src="assets/images/c++.png" alt="Certification C++">
                     </a>
-                    <div class="overlay">
-                        <p>Certification C++</p>
-                    </div>
                     <a href="#modal4" class="view-button">Afficher</a>
                 </div>
                 <!-- Certification 5 -->
@@ -280,9 +274,6 @@
                     <a href="#modal5">
                         <img src="assets/images/CE (WIFI).png" alt="Certification CE (WiFi)">
                     </a>
-                    <div class="overlay">
-                        <p>Certification CE (WiFi)</p>
-                    </div>
                     <a href="#modal5" class="view-button">Afficher</a>
                 </div>
                 <!-- Certification 6 -->
@@ -290,9 +281,6 @@
                     <a href="#modal6">
                         <img src="assets/images/intro-cyber.png" alt="Introduction to Cybersecurity">
                     </a>
-                    <div class="overlay">
-                        <p>Introduction to Cybersecurity</p>
-                    </div>
                     <a href="#modal6" class="view-button">Afficher</a>
                 </div>
                 <!-- Certification 7 -->
@@ -300,9 +288,6 @@
                     <a href="#modal7">
                         <img src="assets/images/cyber-ess.png" alt="Cyber Essentials">
                     </a>
-                    <div class="overlay">
-                        <p>Cyber Essentials</p>
-                    </div>
                     <a href="#modal7" class="view-button">Afficher</a>
                 </div>
                 <!-- Certification 8 -->
@@ -310,9 +295,6 @@
                     <a href="#modal8">
                         <img src="assets/images/network.png" alt="Networking Certification">
                     </a>
-                    <div class="overlay">
-                        <p>Networking Certification</p>
-                    </div>
                     <a href="#modal8" class="view-button">Afficher</a>
                 </div>
                 <!-- Certification 9 -->
@@ -320,9 +302,6 @@
                     <a href="#modal9">
                         <img src="assets/images/NDG.png" alt="NDG Certification">
                     </a>
-                    <div class="overlay">
-                        <p>NDG Certification</p>
-                    </div>
                     <a href="#modal9" class="view-button">Afficher</a>
                 </div>
                 <!-- Certification 10 -->
@@ -330,9 +309,6 @@
                     <a href="#modal10">
                         <img src="assets/images/mooc.png" alt="MOOC Certification">
                     </a>
-                    <div class="overlay">
-                        <p>MOOC Certification</p>
-                    </div>
                     <a href="#modal10" class="view-button">Afficher</a>
                 </div>
             </div>

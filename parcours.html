@@ -64,7 +64,6 @@
         main {
             flex: 1;
             padding-top: 80px;
-            /* To avoid content being hidden behind the fixed header */
         }
 
         footer {
@@ -120,19 +119,57 @@
             text-align: center;
         }
 
-        .engagement-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
         .engagement p {
             font-size: 1.1rem;
             line-height: 1.6;
             color: var(--text-primary);
             margin-bottom: 20px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .experience {
+                padding: 15px;
+            }
+
+            .experience h3 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .experience h3 {
+                font-size: 1.3rem;
+            }
+
+            .btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .experience h3 {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
@@ -166,8 +203,8 @@
                 <li><strong>2020 – 2023 :</strong> Bac Pro Systèmes Numériques – Lycée Léonard de Vinci (Mention Bien)
                 </li>
             </ul>
-            <h2>💼 Expériences Professionnelles</h2>
 
+            <h2>💼 Expériences Professionnelles</h2>
             <div class="experience">
                 <h3>Administrateur Système, Réseau & Sécurité – Université de Dauphine</h3>
                 <p><strong>Période :</strong> Janvier – Mars 2025 (8 semaines)</p>
@@ -179,7 +216,7 @@
                     <li>Migration AD Windows 2012 vers 2022</li>
                     <li>Mise à jour et maintenance des équipements réseau (switchs, routeurs)</li>
                 </ul>
-                <a href="stage/staeg3.html" class="btn btn-outline-light">En savoir plus</a>
+                <a href="stage/stage3.html" class="btn">En savoir plus</a>
             </div>
 
             <div class="experience">
@@ -190,7 +227,7 @@
                     <li>Support aux utilisateurs et formation aux bonnes pratiques de cybersécurité</li>
                     <li>Gestion des incidents réseau et système</li>
                 </ul>
-                <a href="stage/stage2.html" class="btn btn-outline-light">En savoir plus</a>
+                <a href="stage/stage2.html" class="btn">En savoir plus</a>
             </div>
 
             <div class="experience">
@@ -201,7 +238,7 @@
                     <li>Rédaction de contenus pour blogs / pages pro</li>
                     <li>Création de maquettes visuelles pour les clients</li>
                 </ul>
-                <a href="stage/stage1.html" class="btn btn-outline-light">En savoir plus</a>
+                <a href="stage/stage1.html" class="btn">En savoir plus</a>
             </div>
 
             <h2>🧪 Projets techniques</h2>
@@ -214,8 +251,6 @@
 
             <h2>📂 Mon Engagement Étudiant</h2>
             <div class="engagement">
-                <img src="assets/images/Mon_Engagement_ENC_Bessières.png" alt="Mon Engagement ENC Bessières"
-                    class="engagement-image">
                 <p>
                     Découvrez mon engagement en tant qu'étudiant à l'ENC Bessières. Ce PowerPoint met en avant mes
                     initiatives,
@@ -230,10 +265,6 @@
     <footer>
         <p>&copy; 2025 Mohamed Elnaggar</p>
     </footer>
-    <script src="assets/js/gsap.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

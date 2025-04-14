@@ -6,6 +6,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veille - COGNET Thibault</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+            color: #00ff88;
+        }
+
+        .intro,
+        .section,
+        .source-card {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #1a1a1a;
+            padding: 20px;
+            border: 1px solid #00ff88;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: #00ff88;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .grid-selection {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+
+        .story-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: nowrap;
+        }
+
+        .story-card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--accent-blue);
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            font-weight: bold;
+            border-radius: 15px;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            background-color: var(--accent-green);
+            color: black;
+            transform: scale(1.05);
+        }
+
+        .story {
+            max-width: 900px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .grid-selection {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .story-card {
+                width: 120px;
+                height: 120px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .intro,
+            .section {
+                padding: 15px;
+            }
+
+            .story-card {
+                width: 100px;
+                height: 100px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .story-card {
+                width: 80px;
+                height: 80px;
+                font-size: 0.9rem;
+            }
+
+            .grid-selection {
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -23,61 +160,8 @@
             </ul>
         </nav>
     </header>
-    <!DOCTYPE html>
-    <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ma veille technologique</title>
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <style>
-            body {
-                background-color: #0f0f0f;
-                color: white;
-                font-family: Arial, sans-serif;
-                padding: 30px;
-            }
-
-            h1,
-            h2,
-            h3 {
-                text-align: center;
-                color: #00ff88;
-            }
-
-            .intro,
-            .section,
-            .source-card {
-                max-width: 900px;
-                margin: 30px auto;
-                background-color: #1a1a1a;
-                padding: 20px;
-                border: 1px solid #00ff88;
-                border-radius: 12px;
-                box-shadow: 0 0 10px #00ff88;
-            }
-
-            .section ul {
-                padding-left: 20px;
-            }
-
-            a {
-                color: #00ff88;
-                font-weight: bold;
-                text-decoration: none;
-            }
-
-            a:hover {
-                text-decoration: underline;
-            }
-        </style>
-    </head>
-
-    <body>
-
-
-        <br>
+    <main>
         <h1>🛰️ Veille technologique personnelle</h1>
         <h2>Comment je reste informé et développe mes compétences en cybersécurité et intelligence artificielle</h2>
 
@@ -145,172 +229,178 @@
             </ul>
         </div>
 
-    </body>
-
-    <h2 class="subtitle" style="color: var(--accent-green); text-align: center; margin-top: 60px;">
-        Quelques actualités optionnelles :
-    </h2>
+        <h2 class="subtitle" style="color: var(--accent-green); text-align: center; margin-top: 60px;">
+            Quelques actualités optionnelles :
+        </h2>
 
 
-    <!-- Grille de sélection -->
-    <div class="grid-selection" id="gridSelection">
-        <div class="story-row">
-            <div class="story-image-wrapper">
+        <!-- Grille de sélection -->
+        <div class="grid-selection" id="gridSelection">
+            <div class="story-row">
+                <div class="story-image-wrapper">
+                </div>
+                <div class="story-card" onclick="showStory('story1')">
+                    Actualité 1
+                </div>
             </div>
-            <div class="story-card" onclick="showStory('story1')">
-                Actualité 1
+
+            <div class="story-row">
+                <div class="story-card" onclick="showStory('story2')">
+                    Actualité 2
+                </div>
+                <div class="story-image-wrapper">
+                </div>
+            </div>
+
+            <div class="story-row">
+                <div class="story-card" onclick="showStory('story3')">
+                    <br>Actualité 3
+                </div>
+            </div>
+
+            <div class="story-row">
+                <div class="story-card" onclick="showStory('story4')">
+                    <br>Actualité 4
+                </div>
             </div>
         </div>
 
-        <div class="story-row">
-            <div class="story-card" onclick="showStory('story2')">
-                Actualité 2
+        <!-- Actualité 1 -->
+        <div id="story1" class="story" style="display: none;">
+            <div class="experience">
+                <h3>🚨 Ukraine : Cyberattaque contre les chemins de fer (Mars 2025)</h3>
+                <p><strong>Date :</strong> 23 mars 2025</p>
+                <h4>🎯 Objectif de l'attaque</h4>
+                <ul>
+                    <li>Paralyser le réseau ferroviaire ukrainien en pleine guerre avec la Russie.</li>
+                    <li>Désorganiser la logistique militaire et les déplacements civils.</li>
+                </ul>
+                <h4>🛠️ Méthodes utilisées par les hackers</h4>
+                <ul>
+                    <li>Attaque par DDoS : surcharge des serveurs des chemins de fer via des milliers de requêtes.</li>
+                    <li>Sabotage physique : frappes de drones sur les infrastructures ferroviaires.</li>
+                    <li>Interruption des systèmes de réservation en ligne et de gestion du trafic.</li>
+                </ul>
+                <h4>💣 Groupe responsable</h4>
+                <ul>
+                    <li>Groupes cybercriminels pro-russes (non revendiqués officiellement mais fortement suspectés).
+                    </li>
+                    <li>Action coordonnée avec des attaques physiques sur le terrain.</li>
+                </ul>
+                <h4>⚠️ Conséquences principales</h4>
+                <ul>
+                    <li>Arrêt temporaire du réseau ferroviaire national.</li>
+                    <li>Pagaille dans les transports, ralentissement de la logistique militaire.</li>
+                    <li>Réaction d’urgence des autorités pour restaurer les services.</li>
+                </ul>
+                <p>📰 <a href="https://www.reuters.com/technology/cybersecurity/ukraine-state-railway-says-online-services-partially-restored-after-cyber-attack-2025-03-27/"
+                        target="_blank">Lire l'article complet</a></p>
+                <p style="text-align:right;"><a href="#" onclick="backToGrid()">Merci d'avoir lu 😉</a></p>
             </div>
-            <div class="story-image-wrapper">
+        </div>
+
+        <!-- Actualité 2 -->
+        <div id="story2" class="story" style="display: none;">
+            <div class="experience">
+                <h3>💥 Hezbollah : Talkies-walkies piégés au Liban (2024)</h3>
+                <p><strong>Date :</strong> Septembre 2024</p>
+                <h4>🎯 Objectif de l'attaque</h4>
+                <ul>
+                    <li>Désorganiser le Hezbollah sans intervention militaire directe.</li>
+                    <li>Éliminer des cadres opérationnels de manière ciblée et discrète.</li>
+                    <li>Créer un climat de panique et de paranoïa dans les rangs ennemis.</li>
+                </ul>
+                <h4>🛠️ Méthodes utilisées</h4>
+                <ul>
+                    <li>Insertion de PETN (explosif) dans des talkies-walkies utilisés par le Hezbollah.</li>
+                    <li>Détonateurs activés à distance via ondes radio, synchronisés pour exploser en même temps.</li>
+                    <li>Sabotage réalisé grâce à une infiltration logistique et technologique (cyber-opération
+                        déguisée).
+                    </li>
+                </ul>
+                <h4>💣 Groupe responsable</h4>
+                <ul>
+                    <li>Services secrets israéliens (Mossad), opération revendiquée publiquement par le Premier
+                        ministre.
+                    </li>
+                    <li>Utilisation de sociétés écrans pour infiltrer la chaîne logistique de livraison du matériel.
+                    </li>
+                </ul>
+                <h4>⚠️ Conséquences principales</h4>
+                <ul>
+                    <li>+40 morts, +3 500 blessés au Liban.</li>
+                    <li>Réduction de l’utilisation des équipements standards par le Hezbollah.</li>
+                    <li>Vives tensions diplomatiques et dénonciation par l’ONU.</li>
+                </ul>
+                <p>🎥 <a href="https://www.youtube.com/watch?v=RUisfTN2J1Y" target="_blank">Voir la vidéo</a></p>
+                <p>📰 <a href="https://www.bbc.com/afrique/articles/c62gw92dl7wo" target="_blank">Lire l’article
+                        complet</a>
+                </p>
+                <p style="text-align:right;"><a href="#" onclick="backToGrid()">Merci d'avoir lu 😉</a></p>
             </div>
         </div>
 
-        <div class="story-row">
-            <div class="story-card" onclick="showStory('story3')">
-                <br>Actualité 3
+        <!-- Actualité 3 -->
+        <div id="story3" class="story" style="display: none;">
+            <div class="experience">
+                <h3>🧑‍💻 Trois jeunes piratent 4100 Bitcoins via phishing (2024)</h3>
+                <p><strong>Date :</strong> Juin 2024</p>
+                <h4>🎯 Objectif de l'attaque</h4>
+                <ul>
+                    <li>Voler des cryptomonnaies en profitant de la naïveté des victimes.</li>
+                    <li>Réaliser un gain rapide en crypto-actifs anonymes.</li>
+                </ul>
+                <h4>🛠️ Méthodes utilisées par les hackers</h4>
+                <ul>
+                    <li>Création d’un faux site identique à celui d’une plateforme d’échange crypto.</li>
+                    <li>Envoi d’e-mails frauduleux (phishing) imitant le support de la plateforme.</li>
+                    <li>La victime saisit ses identifiants, permettant aux pirates de se connecter à son compte.</li>
+                    <li>Transfert des 4100 BTC vers les portefeuilles des attaquants.</li>
+                </ul>
+                <h4>💣 Ce qui les a trahis</h4>
+                <ul>
+                    <li>Les jeunes se sont filmés sur Discord pendant l’attaque.</li>
+                    <li>Ils ont partagé leurs pseudos et se sont vantés sur les réseaux sociaux.</li>
+                    <li>Les enquêteurs ont recoupé les informations avec les adresses IP et les logs.</li>
+                </ul>
+                <p>🎥 <a href="https://www.youtube.com/watch?v=aT57pCYlt8c" target="_blank">Voir la vidéo
+                        explicative</a>
+                </p>
+                <p style="text-align:right;"><a href="#" onclick="backToGrid()">Merci d'avoir lu 😉</a></p>
             </div>
         </div>
 
-        <div class="story-row">
-            <div class="story-card" onclick="showStory('story4')">
-                <br>Actualité 4
+        <!-- Actualité 4 -->
+        <div id="story4" class="story" style="display: none;">
+            <div class="experience">
+                <h3>🏥 Cyberattaques sur les hôpitaux français (2022–2024)</h3>
+                <p><strong>Date :</strong> Août 2022 à Novembre 2024</p>
+                <h4>🎯 Objectif des attaques</h4>
+                <ul>
+                    <li>Paralyser les systèmes hospitaliers pour demander des rançons élevées (jusqu’à 10 millions $).
+                    </li>
+                    <li>Vendre des données médicales sensibles sur le dark web.</li>
+                </ul>
+                <h4>🛠️ Méthodes utilisées par les hackers</h4>
+                <ul>
+                    <li>Phishing ciblé : faux emails avec pièces jointes infectées (Word/PDF) → infection du réseau.
+                    </li>
+                    <li>Exploitation de failles logicielles : vulnérabilités dans Mediboard, etc.</li>
+                    <li>Déploiement de ransomwares pour chiffrer toutes les données des patients.</li>
+                    <li>Vol massif de données (750 000 patients affectés en 2024).</li>
+                </ul>
+                <h4>⚠️ Ce qui a aggravé les conséquences</h4>
+                <ul>
+                    <li>Absence de sauvegardes valides ou testées.</li>
+                    <li>Peu d’hôpitaux disposaient de personnel cybersécurité dédié (7% seulement en 2023).</li>
+                    <li>Retour au papier pendant plusieurs jours, retard de traitements.</li>
+                </ul>
+                <p>📰 <a href="https://www.lemonde.fr/pixels/article/2024/11/20/ce-que-l-on-sait-sur-le-vol-des-donnees-medicales-de-750-000-personnes_6405519_4408996.html"
+                        target="_blank">Lire l’article complet</a></p>
+                <p style="text-align:right;"><a href="#" onclick="backToGrid()">Merci d'avoir lu 😉</a></p>
             </div>
         </div>
-    </div>
-
-    <!-- Actualité 1 -->
-    <div id="story1" class="story" style="display: none;">
-        <div class="experience">
-            <h3>🚨 Ukraine : Cyberattaque contre les chemins de fer (Mars 2025)</h3>
-            <p><strong>Date :</strong> 23 mars 2025</p>
-            <h4>🎯 Objectif de l'attaque</h4>
-            <ul>
-                <li>Paralyser le réseau ferroviaire ukrainien en pleine guerre avec la Russie.</li>
-                <li>Désorganiser la logistique militaire et les déplacements civils.</li>
-            </ul>
-            <h4>🛠️ Méthodes utilisées par les hackers</h4>
-            <ul>
-                <li>Attaque par DDoS : surcharge des serveurs des chemins de fer via des milliers de requêtes.</li>
-                <li>Sabotage physique : frappes de drones sur les infrastructures ferroviaires.</li>
-                <li>Interruption des systèmes de réservation en ligne et de gestion du trafic.</li>
-            </ul>
-            <h4>💣 Groupe responsable</h4>
-            <ul>
-                <li>Groupes cybercriminels pro-russes (non revendiqués officiellement mais fortement suspectés).</li>
-                <li>Action coordonnée avec des attaques physiques sur le terrain.</li>
-            </ul>
-            <h4>⚠️ Conséquences principales</h4>
-            <ul>
-                <li>Arrêt temporaire du réseau ferroviaire national.</li>
-                <li>Pagaille dans les transports, ralentissement de la logistique militaire.</li>
-                <li>Réaction d’urgence des autorités pour restaurer les services.</li>
-            </ul>
-            <p>📰 <a href="https://www.reuters.com/technology/cybersecurity/ukraine-state-railway-says-online-services-partially-restored-after-cyber-attack-2025-03-27/"
-                    target="_blank">Lire l'article complet</a></p>
-            <p style="text-align:right;"><a href="#" onclick="backToGrid()">Merci d'avoir lu 😉</a></p>
-        </div>
-    </div>
-
-    <!-- Actualité 2 -->
-    <div id="story2" class="story" style="display: none;">
-        <div class="experience">
-            <h3>💥 Hezbollah : Talkies-walkies piégés au Liban (2024)</h3>
-            <p><strong>Date :</strong> Septembre 2024</p>
-            <h4>🎯 Objectif de l'attaque</h4>
-            <ul>
-                <li>Désorganiser le Hezbollah sans intervention militaire directe.</li>
-                <li>Éliminer des cadres opérationnels de manière ciblée et discrète.</li>
-                <li>Créer un climat de panique et de paranoïa dans les rangs ennemis.</li>
-            </ul>
-            <h4>🛠️ Méthodes utilisées</h4>
-            <ul>
-                <li>Insertion de PETN (explosif) dans des talkies-walkies utilisés par le Hezbollah.</li>
-                <li>Détonateurs activés à distance via ondes radio, synchronisés pour exploser en même temps.</li>
-                <li>Sabotage réalisé grâce à une infiltration logistique et technologique (cyber-opération déguisée).
-                </li>
-            </ul>
-            <h4>💣 Groupe responsable</h4>
-            <ul>
-                <li>Services secrets israéliens (Mossad), opération revendiquée publiquement par le Premier ministre.
-                </li>
-                <li>Utilisation de sociétés écrans pour infiltrer la chaîne logistique de livraison du matériel.</li>
-            </ul>
-            <h4>⚠️ Conséquences principales</h4>
-            <ul>
-                <li>+40 morts, +3 500 blessés au Liban.</li>
-                <li>Réduction de l’utilisation des équipements standards par le Hezbollah.</li>
-                <li>Vives tensions diplomatiques et dénonciation par l’ONU.</li>
-            </ul>
-            <p>🎥 <a href="https://www.youtube.com/watch?v=RUisfTN2J1Y" target="_blank">Voir la vidéo</a></p>
-            <p>📰 <a href="https://www.bbc.com/afrique/articles/c62gw92dl7wo" target="_blank">Lire l’article complet</a>
-            </p>
-            <p style="text-align:right;"><a href="#" onclick="backToGrid()">Merci d'avoir lu 😉</a></p>
-        </div>
-    </div>
-
-    <!-- Actualité 3 -->
-    <div id="story3" class="story" style="display: none;">
-        <div class="experience">
-            <h3>🧑‍💻 Trois jeunes piratent 4100 Bitcoins via phishing (2024)</h3>
-            <p><strong>Date :</strong> Juin 2024</p>
-            <h4>🎯 Objectif de l'attaque</h4>
-            <ul>
-                <li>Voler des cryptomonnaies en profitant de la naïveté des victimes.</li>
-                <li>Réaliser un gain rapide en crypto-actifs anonymes.</li>
-            </ul>
-            <h4>🛠️ Méthodes utilisées par les hackers</h4>
-            <ul>
-                <li>Création d’un faux site identique à celui d’une plateforme d’échange crypto.</li>
-                <li>Envoi d’e-mails frauduleux (phishing) imitant le support de la plateforme.</li>
-                <li>La victime saisit ses identifiants, permettant aux pirates de se connecter à son compte.</li>
-                <li>Transfert des 4100 BTC vers les portefeuilles des attaquants.</li>
-            </ul>
-            <h4>💣 Ce qui les a trahis</h4>
-            <ul>
-                <li>Les jeunes se sont filmés sur Discord pendant l’attaque.</li>
-                <li>Ils ont partagé leurs pseudos et se sont vantés sur les réseaux sociaux.</li>
-                <li>Les enquêteurs ont recoupé les informations avec les adresses IP et les logs.</li>
-            </ul>
-            <p>🎥 <a href="https://www.youtube.com/watch?v=aT57pCYlt8c" target="_blank">Voir la vidéo explicative</a>
-            </p>
-            <p style="text-align:right;"><a href="#" onclick="backToGrid()">Merci d'avoir lu 😉</a></p>
-        </div>
-    </div>
-
-    <!-- Actualité 4 -->
-    <div id="story4" class="story" style="display: none;">
-        <div class="experience">
-            <h3>🏥 Cyberattaques sur les hôpitaux français (2022–2024)</h3>
-            <p><strong>Date :</strong> Août 2022 à Novembre 2024</p>
-            <h4>🎯 Objectif des attaques</h4>
-            <ul>
-                <li>Paralyser les systèmes hospitaliers pour demander des rançons élevées (jusqu’à 10 millions $).</li>
-                <li>Vendre des données médicales sensibles sur le dark web.</li>
-            </ul>
-            <h4>🛠️ Méthodes utilisées par les hackers</h4>
-            <ul>
-                <li>Phishing ciblé : faux emails avec pièces jointes infectées (Word/PDF) → infection du réseau.</li>
-                <li>Exploitation de failles logicielles : vulnérabilités dans Mediboard, etc.</li>
-                <li>Déploiement de ransomwares pour chiffrer toutes les données des patients.</li>
-                <li>Vol massif de données (750 000 patients affectés en 2024).</li>
-            </ul>
-            <h4>⚠️ Ce qui a aggravé les conséquences</h4>
-            <ul>
-                <li>Absence de sauvegardes valides ou testées.</li>
-                <li>Peu d’hôpitaux disposaient de personnel cybersécurité dédié (7% seulement en 2023).</li>
-                <li>Retour au papier pendant plusieurs jours, retard de traitements.</li>
-            </ul>
-            <p>📰 <a href="https://www.lemonde.fr/pixels/article/2024/11/20/ce-que-l-on-sait-sur-le-vol-des-donnees-medicales-de-750-000-personnes_6405519_4408996.html"
-                    target="_blank">Lire l’article complet</a></p>
-            <p style="text-align:right;"><a href="#" onclick="backToGrid()">Merci d'avoir lu 😉</a></p>
-        </div>
-    </div>
-    </section>
+    </main>
 
     <script>
         function showStory(id) {
@@ -328,82 +418,6 @@
             document.getElementById("gridSelection").style.display = "grid";
         }
     </script>
-
-    <style>
-        .grid-selection {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 900px;
-            margin: 60px auto;
-        }
-
-        .story-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: nowrap;
-        }
-
-        .story-image-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .source-label {
-            color: #00ff88;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        .story-image {
-            width: 150px;
-            height: 150px;
-            object-fit: contain;
-        }
-
-        .story-card {
-            background-color: var(--card-bg);
-            border: 2px solid var(--accent-blue);
-            width: 150px;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            font-weight: bold;
-            border-radius: 15px;
-            transition: transform 0.2s ease, background-color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .story-card:hover {
-            background-color: var(--accent-green);
-            color: black;
-            transform: scale(1.05);
-        }
-
-        .story {
-            max-width: 900px;
-            margin: auto;
-            margin-top: 50px;
-        }
-
-        .title {
-            text-align: center;
-            margin-top: 100px;
-            color: var(--accent-green);
-        }
-    </style>
 </body>
-
-</html>
-
-</main>
 
 </html>

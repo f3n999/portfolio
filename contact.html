@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez Mohamed Elnaggar pour toute question ou collaboration.">
     <title>Contact - Mohamed Elnaggar</title>
     <style>
         :root {
@@ -141,9 +142,60 @@
         .success-message {
             display: none;
             text-align: center;
-            color: var(--accent-green);
+            color: var (--accent-green);
             font-weight: bold;
             margin-top: 20px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .contact-section {
+                padding: 30px 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 20px 10px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 0.9rem;
+            }
+
+            .contact-form button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 15px 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 0.8rem;
+            }
+
+            .contact-form button {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>

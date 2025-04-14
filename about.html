@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="En savoir plus sur Mohamed Elnaggar, étudiant en cybersécurité.">
     <title>À propos - Mohamed Elnaggar</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
     <style>
         :root {
             --background: #121212;
@@ -60,17 +59,9 @@
             color: var(--accent-green);
         }
 
-        .profile-pic {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 2px solid var(--accent-green);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            margin-right: 20px;
-        }
-
         main {
             flex: 1;
+            padding-top: 80px;
         }
 
         footer {
@@ -82,109 +73,8 @@
             margin-top: auto;
         }
 
-        h1,
-        h2,
-        h3 {
-            color: var(--text-primary);
-        }
-
-        p,
-        li {
-            max-width: 800px;
-            margin: 0 auto 15px auto;
-            text-align: justify;
-        }
-
-        img {
-            max-width: 100%;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-green);
-            color: #000;
-        }
-
-        .btn-outline {
-            border: 2px solid var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
-        .btn:hover {
-            background-color: var(--accent-blue);
-            color: #fff;
-        }
-
-        .intro-text {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--text-primary);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-
-        section p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .experience {
-            background-color: var(--card-bg);
-            padding: 20px;
-            margin-bottom: 25px;
-            border-left: 4px solid var(--accent-green);
-            border-radius: 10px;
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease;
-        }
-
-        .experience:hover {
-            transform: translateY(-3px);
-        }
-
-        .experience h3 {
-            color: var(--accent-green);
-            margin-bottom: 10px;
-        }
-
-        .experience p {
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        .experience ul {
-            padding-left: 20px;
-            list-style: disc;
-            margin-top: 0;
-        }
-
-        .experience ul li {
-            margin-bottom: 8px;
-        }
-
-        /* New styles */
-        .stages {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .stages h1 {
-            font-size: 2rem;
+        h1 {
+            font-size: 2.5rem;
             color: var(--accent-green);
             text-align: center;
             margin-bottom: 40px;
@@ -204,9 +94,6 @@
             color: var(--accent-green);
             margin-bottom: 10px;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .hero .subtitle {
@@ -223,46 +110,47 @@
             text-align: center;
         }
 
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .hero .big-title {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
         }
 
-        .cta-buttons a {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        @media (max-width: 768px) {
+            .hero .big-title {
+                font-size: 1.8rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
         }
 
-        .btn-primary {
-            background-color: var(--accent-green);
-            color: #000;
-        }
+        @media (max-width: 480px) {
+            .hero .big-title {
+                font-size: 1.5rem;
+            }
 
-        .btn-outline-light {
-            border: 2px solid var(--accent-green);
-            color: var(--accent-green);
-        }
+            .hero .subtitle {
+                font-size: 0.9rem;
+            }
 
-        .btn-outline-light:hover {
-            background-color: var(--accent-green);
-            color: #000;
-        }
-
-        .intro-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--text-primary);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
+            .hero p {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -301,55 +189,11 @@
                     Bienvenue dans mon univers.</p>
             </div>
         </section>
-
     </main>
 
     <footer>
         <p>&copy; 2025 Mohamed Elnaggar. Tous droits réservés.</p>
     </footer>
-
-    <script src="assets/js/gsap.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from(".big-title", {
-            opacity: 0,
-            y: 40,
-            duration: 1,
-            delay: 0.3
-        });
-
-        gsap.from(".subtitle", {
-            opacity: 0,
-            y: 40,
-            duration: 1,
-            delay: 0.6
-        });
-
-        gsap.from(".stages h2", {
-            opacity: 0,
-            y: 40,
-            duration: 1,
-            delay: 0.9,
-            scrollTrigger: {
-                trigger: ".stages h2",
-                start: "top 80%"
-            }
-        });
-
-        gsap.from(".stages p", {
-            opacity: 0,
-            y: 40,
-            duration: 1,
-            delay: 1.2,
-            scrollTrigger: {
-                trigger: ".stages p",
-                start: "top 80%"
-            }
-        });
-    </script>
 </body>
 
 </html>

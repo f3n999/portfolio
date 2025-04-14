@@ -134,6 +134,48 @@
             background-color: var(--accent-blue);
             color: #fff;
         }
+
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .stage-list {
+                gap: 15px;
+            }
+
+            .stage-box {
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stage-box {
+                max-width: 200px;
+                padding: 15px;
+            }
+
+            .stage-box h3 {
+                font-size: 1.2rem;
+            }
+
+            .stage-box p {
+                font-size: 0.9rem;
+            }
+
+            .stage-box .button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stage-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stage-box {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
