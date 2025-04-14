@@ -17,7 +17,7 @@ gsap.from("footer", {
 });
 
 // Animation spécifique pour la page d'accueil (si l'élément existe)
-if(document.querySelector(".hero")) {
+if (document.querySelector(".hero")) {
     gsap.from(".hero .profile-pic", {
         opacity: 0,
         scale: 0.8,
@@ -71,3 +71,13 @@ document.querySelectorAll('.btn').forEach(btn => {
         gsap.to(btn, { scale: 1, duration: 0.2 });
     });
 });
+
+// Gestion du menu responsive avec le bouton hamburger
+const menu = document.querySelector("nav ul");
+const toggleBtn = document.querySelector(".menu-toggle");
+
+if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+        menu.classList.toggle("show");
+    });
+}

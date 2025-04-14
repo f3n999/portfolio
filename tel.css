@@ -53,6 +53,50 @@ footer {
     margin-top: auto;
 }
 
+/* Styles pour le menu responsive */
+
+/* Par défaut, le menu est visible sur les grands écrans */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 25px;
+}
+
+/* Cacher le menu par défaut sur les petits écrans */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        /* juste en dessous du header */
+        left: 0;
+        width: 100%;
+        background-color: #1F1F1F;
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #FFFFFF;
+        font-size: 1.5rem;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1000;
+    }
+}
+
 /* Responsive styles */
 @media (max-width: 1024px) {
     h1 {
