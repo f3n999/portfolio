@@ -18,6 +18,7 @@ html {
     --card-hover: #292929; /* Not currently used, but defined */
     --input-bg: #292929; /* From old contact form, good for consistency */
     --input-border: #444; /* From old contact form */
+    --accent-green-transparent: rgba(0, 255, 135, 0.25); /* New variable for transparent accent */
 }
 
 body {
@@ -207,7 +208,36 @@ img {
     margin-bottom: 1em;
 }
 
-.certifications {}
+/* Certifications Page Styles */
+.certification-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    gap: 25px; /* Space between items */
+    padding: 20px 0; /* Padding for the list */
+}
+
+.certification-box {
+    border: 1px solid var(--input-border); /* Using a theme variable, was --card-hover */
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Combined transitions */
+}
+.certification-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--accent-green-transparent);
+    border-color: var(--accent-green);
+}
+.certification-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    /* margin-bottom: 10px; /* Uncomment if adding a text link below image */
+}
+
+/* Empty placeholder rules for other sections if needed in future */
 .projects {}
 .stages {}
 
@@ -422,4 +452,88 @@ img {
 .gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px var(--accent-green); /* Added glow effect */
+}
+
+/* New styles for gallery items and captions */
+.gallery-item {
+    margin: 0; /* Grid gap will handle spacing, remove default figure margin */
+    text-align: center;
+}
+
+.gallery-item img {
+    /* width: 100%; height: auto; display: block; are global or already in .gallery img */
+    margin-bottom: 8px; /* Space between image and caption */
+    /* border-radius: 4px; */ /* Overridden by .gallery img's 10px or keep if preferred */
+}
+
+.gallery-item figcaption {
+    font-size: 0.9em;
+    color: #ccc; /* Lighter than primary text for subtlety */
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Readability improvements for specific hero paragraphs */
+.hero .container > p:not(.subtitle):not(.intro-text),
+.hero .intro-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    /* text-align is handled by .text-center applied to the parent div */
+}
+
+@media (min-width: 768px) {
+    .hero .container > p:not(.subtitle):not(.intro-text),
+    .hero .intro-text {
+        font-size: 1.15rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero .container > p:not(.subtitle):not(.intro-text),
+    .hero .intro-text {
+        font-size: 1.2rem;
+        line-height: 1.75; /* Slightly more line height for larger desktop text */
+    }
+}
+
+/* HTB Stats Section */
+.htb-stats {
+    margin-top: 40px; /* Space above the stats box */
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--accent-green);
+    box-shadow: 0 4px 15px rgba(0, 255, 135, 0.1);
+}
+.htb-stats h2 {
+    font-size: 1.5rem; /* Or var(--h3-font-size) if defined */
+    color: var(--accent-green);
+    margin-bottom: 15px;
+    text-align: center;
+}
+.htb-stats p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.htb-stats .htb-profile-link {
+    margin-top: 15px; /* Space above the button */
+    display: inline-block;
+}
+
+/* Veille Page - Takeaway Styles */
+.takeaway {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #b0b0b0;
+    margin-top: 6px;
+    margin-bottom: 8px;
+    margin-left: 15px; /* Indentation from the bullet/emoji */
+    padding-left: 12px;
+    border-left: 2px solid var(--accent-green);
+    line-height: 1.5;
+}
+
+.section ul li { /* Ensure enough space for takeaways */
+    margin-bottom: 12px; /* Increased from default li margin */
 }

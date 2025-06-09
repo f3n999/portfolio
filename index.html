@@ -45,13 +45,19 @@
             class="btn btn-outline-light">LinkedIn</a>
           <a href="mailto:mohamed.elnaggar@oteria.fr" class="btn btn-outline-light">Email</a>
           <a href="https://tryhackme.com/p/GUTSEM" target="_blank" class="btn btn-outline-light">TryHackMe</a>
-          <button class="btn btn-hackthebox" onclick="showModal()">Hack The Box</button>
         </div>
         <p class="intro-text">
           Je construis petit à petit mon chemin dans la cybersécurité.<br>
           Entre projets concrets, labos techniques et certifications reconnues,<br>
           je me forme avec passion pour devenir un professionnel capable de faire la différence.
         </p>
+        <div class="htb-stats">
+            <h2>My HackTheBox Stats</h2>
+            <p>Rank: Pro Hacker</p>
+            <p>User Solves: 150+</p>
+            <p>System Solves: 50+</p>
+            <a href="https://app.hackthebox.com/profile/YOUR_PROFILE_ID" class="btn btn-outline-light htb-profile-link" target="_blank" rel="noopener noreferrer">View HTB Profile</a>
+        </div>
       </div>
     </section>
   </main>
@@ -59,12 +65,6 @@
   <footer>
     <p>&copy; 2025 Mohamed Elnaggar. Tous droits réservés.</p>
   </footer>
-
-  <!-- Modal -->
-  <div class="modal" id="htbModal">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-    <img src="assets/images/HTB.png" alt="Hack The Box">
-  </div>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
@@ -90,14 +90,6 @@
       delay: 0.9
     });
 
-    // Modal functionality
-    function showModal() {
-      document.getElementById("htbModal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("htbModal").style.display = "none";
-    }
   </script>
 </body>
 
