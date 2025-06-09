@@ -58,16 +58,24 @@ header {
     align-items: center;
 }
 
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-primary);
-    font-size: 1.8rem;
-    cursor: pointer;
+/* CSS Checkbox Hack for Mobile Menu */
+.menu-toggle-input {
+    display: none; /* Hide the actual checkbox */
 }
 
-header ul {
+.menu-toggle-label {
+    display: none; /* Hidden by default, shown only on mobile */
+    cursor: pointer;
+    font-size: 28px;
+    color: var(--text-primary);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1006;
+    line-height: 1;
+}
+
+header nav ul { /* Changed from 'header ul' to be more specific if direct 'ul' children of header exist elsewhere */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -322,40 +330,41 @@ img {
 }
 
 @media (max-width: 768px) {
-    header ul {
+    .menu-toggle-label {
+        display: block;
+    }
+
+    header nav ul {
         display: none;
         flex-direction: column;
+        align-items: center;
+
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
+
         background-color: var(--card-bg);
-        padding: 20px 0;
+        padding: 60px 20px 20px;
+
         z-index: 1005;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Updated transition */
-        align-items: center;
     }
-    header ul.show {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
-    }
-    header ul li {
+
+    header nav ul li {
         text-align: center;
-        padding: 15px 0;
+        padding: 0; /* Remove padding from li, will add to a */
         width: 100%;
     }
-    .menu-toggle {
+    header nav ul li a {
         display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        z-index: 1006;
+        padding: 15px 0; /* Consistent padding for tap target */
     }
+
+    #menu-toggle-input:checked ~ nav ul {
+        display: flex;
+    }
+
     .cta-buttons {
         flex-direction: column;
         gap: 10px;
