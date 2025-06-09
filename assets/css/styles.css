@@ -398,6 +398,19 @@ img {
     }
 }
 
+.profile-pic { /* Default size for profile picture */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-green);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-left: auto; /* Centering if parent is flex/grid or if it's block */
+    margin-right: auto;
+    margin-bottom: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
 @media (min-width: 1024px) {
     .container {
         max-width: 1100px;
@@ -536,4 +549,129 @@ img {
 
 .section ul li { /* Ensure enough space for takeaways */
     margin-bottom: 12px; /* Increased from default li margin */
+}
+
+/* Certifications Page - Verify Link Button */
+.certification-box .verify-link {
+    display: block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    border-radius: 4px;
+    text-decoration: none;
+    /* transition is inherited from .btn, but can be specified if different */
+}
+.certification-box .verify-link:hover {
+    background-color: var(--accent-green);
+    color: #000;
+    /* box-shadow is inherited from .btn:hover */
+}
+
+/* CSS-only Lightbox Styles */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+    z-index: 2000; /* Ensure it's on top */
+    padding: 20px;
+}
+
+.lightbox-overlay:target {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s; /* Show immediately when targeted */
+}
+
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Show full image, scaled down if needed */
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1;
+}
+.lightbox-close:hover {
+    color: var(--accent-green);
+}
+
+/* Project Page - Card Styles */
+.project-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for cards */
+    gap: 25px; /* Space between cards */
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--input-border); /* Using a theme variable, was --card-hover or --accent-green */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Arrange content vertically */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px var(--accent-green-transparent);
+    border-color: var(--accent-green);
+}
+.project-card h3 {
+    font-size: 1.5rem; /* From typography scale */
+    color: var(--accent-green);
+    margin-bottom: 10px;
+}
+.project-card .project-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows description to take available space */
+}
+.project-card h4 {
+    font-size: 1.1rem; /* From typography scale */
+    color: var(--text-primary); /* Ensure heading color is primary text */
+    margin-bottom: 8px;
+    margin-top: 10px; /* Space before skills title */
+}
+.project-card .project-skills {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.project-card .project-skills li {
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-bottom: 0; /* Override default li margin if needed */
+}
+.project-card .project-link {
+    margin-top: auto; /* Push button to the bottom of the card */
+    align-self: flex-start;
+    /* Inherits .btn styling, including .btn-primary */
 }
