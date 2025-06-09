@@ -71,13 +71,3 @@ document.querySelectorAll('.btn').forEach(btn => {
         gsap.to(btn, { scale: 1, duration: 0.2 });
     });
 });
-
-// Gestion du menu responsive avec le bouton hamburger
-const menu = document.querySelector("nav ul");
-const toggleBtn = document.querySelector(".menu-toggle");
-
-if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-        menu.classList.toggle("show");
-    });
-}
