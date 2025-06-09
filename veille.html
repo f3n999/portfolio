@@ -6,148 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veille - COGNET Thibault</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="tel.css">
-    <style>
-        body {
-            background-color: #0f0f0f;
-            color: white;
-            font-family: Arial, sans-serif;
-            padding: 30px;
-        }
-
-        h1,
-        h2,
-        h3 {
-            text-align: center;
-            color: #00ff88;
-        }
-
-        .intro,
-        .section,
-        .source-card {
-            max-width: 900px;
-            margin: 30px auto;
-            background-color: #1a1a1a;
-            padding: 20px;
-            border: 1px solid #00ff88;
-            border-radius: 12px;
-            box-shadow: 0 0 10px #00ff88;
-        }
-
-        .section ul {
-            padding-left: 20px;
-        }
-
-        a {
-            color: #00ff88;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .grid-selection {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 900px;
-            margin: 60px auto;
-        }
-
-        .story-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: nowrap;
-        }
-
-        .story-card {
-            background-color: var(--card-bg);
-            border: 2px solid var(--accent-blue);
-            width: 150px;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            font-weight: bold;
-            border-radius: 15px;
-            transition: transform 0.2s ease, background-color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .story-card:hover {
-            background-color: var(--accent-green);
-            color: black;
-            transform: scale(1.05);
-        }
-
-        .story {
-            max-width: 900px;
-            margin: auto;
-            margin-top: 50px;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 1024px) {
-            .grid-selection {
-                grid-template-columns: repeat(1, 1fr);
-            }
-
-            .story-card {
-                width: 120px;
-                height: 120px;
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-
-            h1,
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .intro,
-            .section {
-                padding: 15px;
-            }
-
-            .story-card {
-                width: 100px;
-                height: 100px;
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.2rem;
-            }
-
-            .story-card {
-                width: 80px;
-                height: 80px;
-                font-size: 0.9rem;
-            }
-
-            .grid-selection {
-                gap: 20px;
-            }
-        }
-    </style>
 </head>
 
 <body>
     <header>
+        <button class="menu-toggle">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -157,12 +20,12 @@
                 <li><a href="projet.html">Projets</a></li>
                 <li><a href="certifications.html">Certifications</a></li>
                 <li><a href="veille.html">Veille</a></li>
-                <li><a href="contact.html">Me contacter</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <h1>🛰️ Veille technologique personnelle</h1>
         <h2>Comment je reste informé et développe mes compétences en cybersécurité et intelligence artificielle</h2>
 
