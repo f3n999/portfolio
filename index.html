@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohamed Elnaggar - Portfolio</title>
+  <meta name="description" content="Portfolio de Mohamed Elnaggar - Etudiant en cybersecurite a Oteria Cyber School. Alternant passionne par la securite des systemes et reseaux.">
+  <title>Mohamed Elnaggar - Cybersecurity Portfolio</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <script src="assets/js/gsap.js" defer></script>
   <script src="assets/js/ScrollTrigger.min.js" defer></script>
@@ -12,13 +13,15 @@
 </head>
 
 <body>
+  <canvas id="particles-canvas"></canvas>
+
   <header>
     <input type="checkbox" id="menu-toggle-input" class="menu-toggle-input">
-    <label for="menu-toggle-input" class="menu-toggle-label">☰</label>
+    <label for="menu-toggle-input" class="menu-toggle-label">&#9776;</label>
     <nav>
       <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="about.html">À propos</a></li>
+        <li><a href="about.html">A propos</a></li>
         <li><a href="parcours.html">Parcours</a></li>
         <li><a href="stage.html">Stages</a></li>
         <li><a href="projet.html">Projets</a></li>
@@ -32,65 +35,64 @@
   <main>
     <section id="home" class="hero">
       <div class="container text-center">
-        <h1 class="big-title"><img src="assets/images/moi.jpg" alt="Photo de Mohamed" class="profile-pic">Mohamed
-          Elnaggar</h1>
-        <p class="subtitle">Étudiant en cybersécurité | Passionné de réseau et de sécurité</p>
-        <p>Bienvenue sur mon portfolio. Je m'appelle Mohamed, étudiant en cybersécurité et passionné par les systèmes,
-          les réseaux et l’analyse des vulnérabilités. Je me forme activement sur des plateformes comme TryHackMe et
-          Hack The Box tout en construisant des projets concrets. Mon objectif ? Rejoindre une entreprise où je pourrai
-          renforcer mes compétences et contribuer à sa sécurité.</p>
+        <img src="assets/images/moi.jpg" alt="Photo de Mohamed Elnaggar" class="profile-pic">
+
+        <p class="greeting">// bonjour, je suis</p>
+
+        <h1 class="big-title">Mohamed <span class="accent">Elnaggar</span></h1>
+
+        <p class="subtitle">Etudiant en cybersecurite | Pentest | SOC | Purple Team</p>
+
+        <p class="typing-text"></p>
+        <span class="typing-cursor"></span>
+
+        <div class="status-badge">
+          <span class="dot"></span>
+          Administrateur Systeme & Reseau Junior - Topchrono (Alternance Oteria)
+        </div>
+
         <div class="cta-buttons">
-          <a href="assets/pdf/CV_ELNAGGAR_MOHAMED.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
-          <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank"
-            class="btn btn-outline-light">LinkedIn</a>
-          <a href="mailto:mohamed.elnaggar@oteria.fr" class="btn btn-outline-light">Email</a>
-          <a href="https://tryhackme.com/p/GUTSEM" target="_blank" class="btn btn-outline-light">TryHackMe</a>
+          <a href="assets/pdf/CV_ELNAGGAR_MOHAMED.pdf" class="btn btn-primary" download>Telecharger mon CV</a>
+          <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank" class="btn btn-outline">LinkedIn</a>
+          <a href="mailto:mohamed.elnaggar@oteria.fr" class="btn btn-outline">Email</a>
+          <a href="https://tryhackme.com/p/GUTSEM" target="_blank" class="btn btn-outline">TryHackMe</a>
         </div>
-        <p class="intro-text">
-          Je construis petit à petit mon chemin dans la cybersécurité.<br>
-          Entre projets concrets, labos techniques et certifications reconnues,<br>
-          je me forme avec passion pour devenir un professionnel capable de faire la différence.
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-number" data-count="10" data-suffix="+">0</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="3">0</div>
+            <div class="stat-label">Stages</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="150" data-suffix="+">0</div>
+            <div class="stat-label">CTF Solves</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="2">0</div>
+            <div class="stat-label">Projets</div>
+          </div>
+        </div>
+
+        <p class="hero-description">
+          Je construis mon chemin dans la cybersecurite, entre projets concrets, labos techniques et certifications reconnues.
+          Mon objectif : devenir un professionnel capable de securiser des systemes et faire la difference.
         </p>
-        <div class="htb-stats">
-            <h2>My HackTheBox Stats</h2>
-            <p>Rank: Pro Hacker</p>
-            <p>User Solves: 150+</p>
-            <p>System Solves: 50+</p>
-            <a href="https://app.hackthebox.com/profile/YOUR_PROFILE_ID" class="btn btn-outline-light htb-profile-link" target="_blank" rel="noopener noreferrer">View HTB Profile</a>
-        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Mohamed Elnaggar. Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank">LinkedIn</a>
+      <a href="https://tryhackme.com/p/GUTSEM" target="_blank">TryHackMe</a>
+      <a href="mailto:mohamed.elnaggar@oteria.fr">Contact</a>
+    </div>
+    <p>&copy; 2026 Mohamed Elnaggar. Tous droits reserves.</p>
   </footer>
-
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from(".big-title", {
-      opacity: 0,
-      y: 40,
-      duration: 1,
-      delay: 0.3
-    });
-
-    gsap.from(".subtitle", {
-      opacity: 0,
-      y: 40,
-      duration: 1,
-      delay: 0.6
-    });
-
-    gsap.from(".cta-buttons", {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      delay: 0.9
-    });
-
-  </script>
 </body>
 
 </html>
