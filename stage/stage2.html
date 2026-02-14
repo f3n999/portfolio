@@ -4,22 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Détails du Stage 2 : Technicien Support L2">
-    <title>Stage 2 - Technicien Support SP L2</title>
+    <meta name="description" content="Stage 2 : Technicien Support L2 - ENC Bessieres">
+    <title>Stage 2 - Technicien Support L2</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/gsap.js" defer></script>
+    <script src="../assets/js/ScrollTrigger.min.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
 </head>
 
 <body>
+    <canvas id="particles-canvas"></canvas>
+
     <header>
         <input type="checkbox" id="menu-toggle-input" class="menu-toggle-input">
-        <label for="menu-toggle-input" class="menu-toggle-label">☰</label>
+        <label for="menu-toggle-input" class="menu-toggle-label">&#9776;</label>
         <nav>
             <ul>
                 <li><a href="../index.html">Accueil</a></li>
-                <li><a href="../about.html">À propos</a></li>
+                <li><a href="../about.html">A propos</a></li>
                 <li><a href="../parcours.html">Parcours</a></li>
-                <li><a href="../projet.html">Projets</a></li>
                 <li><a href="../stage.html">Stages</a></li>
+                <li><a href="../projet.html">Projets</a></li>
                 <li><a href="../certifications.html">Certifications</a></li>
                 <li><a href="../veille.html">Veille</a></li>
                 <li><a href="../contact.html">Contact</a></li>
@@ -28,81 +33,69 @@
     </header>
 
     <main>
-        <section class="stage-details container">
-            <div class="stage-text">
-                <h2>Technicien Support L2</h2>
-                <p><strong>Période :</strong> Février 2023 – Avril 2023</p>
-                <ul>
-                    <li>Assistance technique de niveau 2 pour les utilisateurs.</li>
-                    <li>Diagnostic et résolution des incidents matériels et logiciels.</li>
-                    <li>Deploiment des serveur esxi vmware 7 et Installation physique</li>
-                    <li>Gestion des tickets</li>
-                    <li>Installation et configuration de postes de travail et périphériques.</li>
-                    <li>Support réseau de base (DHCP, DNS, Wi-Fi).</li>
-                    <li>Formation des utilisateurs sur les bonnes pratiques informatiques.</li>
-                    <li>Gestion des permissions et des comptes utilisateurs (Active Directory).</li>
-                    <li>Supervision des systèmes via des outils de monitoring.</li>
-                    <li>Participation à des projets d'amélioration continue du support IT.</li>
-                </ul>
+        <section class="stages container">
+            <div class="section-header">
+                <span class="section-tag">// stage 2</span>
+                <h1 class="section-title">Technicien Support L2</h1>
+                <p class="section-subtitle">ENC Bessieres, Paris - Avril a Juin 2024</p>
             </div>
-            <div class="stage-image">
-                <img src="image-stage/ENC.png" alt="Image du stage 2">
-            </div>
-        </section>
 
-        <section class="gallery container">
-            <h2 style="text-align: center; color: var(--accent-green);">Galerie d'images</h2>
-            <figure class="gallery-item">
-                <img src="image-stage/ENC-1.JPEG" alt="Image 1">
-                <figcaption>Placeholder caption: Explain what this image shows.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/ENC-2.JPEG" alt="Image 2">
-                <figcaption>Placeholder caption: Explain what this image shows.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/ENC-3.JPEG" alt="Image 3">
-                <figcaption>Placeholder caption: Explain what this image shows.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/ENC-4.JPEG" alt="Image 4">
-                <figcaption>Placeholder caption: Explain what this image shows.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/ENC-5.JPEG" alt="Image 5">
-                <figcaption>Placeholder caption: Explain what this image shows.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/ENC-6.JPEG" alt="Image 6">
-                <figcaption>Placeholder caption: Explain what this image shows.</figcaption>
-            </figure>
+            <div class="stage-details" style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                <div class="stage-text" style="flex: 1; min-width: 300px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Assistance technique de niveau 2 pour les utilisateurs</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Diagnostic et resolution des incidents materiels et logiciels</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Deploiement des serveurs ESXi VMware 7 et installation physique</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Gestion des tickets</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Installation et configuration de postes de travail et peripheriques</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Support reseau de base (DHCP, DNS, Wi-Fi)</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Formation des utilisateurs sur les bonnes pratiques informatiques</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Gestion des permissions et des comptes utilisateurs (Active Directory)</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Supervision des systemes via des outils de monitoring</li>
+                        <li style="padding: 0.5rem 0;">Participation a des projets d'amelioration continue du support IT</li>
+                    </ul>
+                </div>
+                <div class="stage-image" style="flex: 0 0 200px;">
+                    <img src="image-stage/ENC.png" alt="Logo ENC Bessieres" style="width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+
+            <h2 class="mt-4">Galerie</h2>
+            <div class="certification-list">
+                <div class="certification-box">
+                    <img src="image-stage/ENC-1.JPEG" alt="Image ENC 1">
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/ENC-2.JPEG" alt="Image ENC 2">
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/ENC-3.JPEG" alt="Image ENC 3">
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/ENC-4.JPEG" alt="Image ENC 4">
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/ENC-5.JPEG" alt="Image ENC 5">
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/ENC-6.JPEG" alt="Image ENC 6">
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../stage.html" class="btn btn-ghost">Retour aux stages</a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mohamed Elnaggar</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank">LinkedIn</a>
+            <a href="https://tryhackme.com/p/GUTSEM" target="_blank">TryHackMe</a>
+            <a href="mailto:mohamed.elnaggar@oteria.fr">Contact</a>
+        </div>
+        <p>&copy; 2026 Mohamed Elnaggar. Tous droits reserves.</p>
     </footer>
-
-    <script src="../assets/js/gsap.js"></script>
-    <script src="../assets/js/ScrollTrigger.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from(".big-title", {
-            opacity: 0,
-            y: 40,
-            duration: 1,
-            delay: 0.3
-        });
-
-        gsap.from(".subtitle", {
-            opacity: 0,
-            y: 40,
-            duration: 1,
-            delay: 0.6
-        });
-    </script>
 </body>
 
 </html>

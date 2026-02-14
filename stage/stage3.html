@@ -4,22 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Détails du Stage 3 : Administrateur Système, Réseau & Sécurité">
-    <title>Stage 3 - Administrateur Système, Réseau & Sécurité</title>
+    <meta name="description" content="Stage 3 : Administrateur Systeme, Reseau & Securite - Universite Paris-Dauphine">
+    <title>Stage 3 - Administrateur Systeme, Reseau & Securite</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/gsap.js" defer></script>
+    <script src="../assets/js/ScrollTrigger.min.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
 </head>
 
 <body>
+    <canvas id="particles-canvas"></canvas>
+
     <header>
         <input type="checkbox" id="menu-toggle-input" class="menu-toggle-input">
-        <label for="menu-toggle-input" class="menu-toggle-label">☰</label>
+        <label for="menu-toggle-input" class="menu-toggle-label">&#9776;</label>
         <nav>
             <ul>
                 <li><a href="../index.html">Accueil</a></li>
-                <li><a href="../about.html">À propos</a></li>
+                <li><a href="../about.html">A propos</a></li>
                 <li><a href="../parcours.html">Parcours</a></li>
-                <li><a href="../projet.html">Projets</a></li>
                 <li><a href="../stage.html">Stages</a></li>
+                <li><a href="../projet.html">Projets</a></li>
                 <li><a href="../certifications.html">Certifications</a></li>
                 <li><a href="../veille.html">Veille</a></li>
                 <li><a href="../contact.html">Contact</a></li>
@@ -28,84 +33,78 @@
     </header>
 
     <main>
-        <section class="stage-details container">
-            <div class="stage-text">
-                <h2>Administrateur Système, Réseau & Sécurité</h2>
-                <p><strong>Période :</strong> Janvier – Mars 2025 (8 semaines)</p>
-                <ul>
-                    <li>Administration de serveurs Windows & Active Directory.</li>
-                    <li>Installation et gestion de serveurs Hyper-V et VMs.</li>
-                    <li>Déploiement sur Proxmox, migration de machines virtuelles.</li>
-                    <li>Reconfiguration IP, supervision réseau et sécurité.</li>
-                    <li>Migration AD Windows 2012 vers 2022.</li>
-                    <li>Mise à jour et maintenance des équipements réseau (switchs, routeurs).</li>
-                    <li>Configuration de pare-feu et VPN pour sécuriser les connexions.</li>
-                    <li>Gestion des sauvegardes et restauration des données.</li>
-                    <li>Rédaction de documentations techniques pour les procédures IT.</li>
-                </ul>
+        <section class="stages container">
+            <div class="section-header">
+                <span class="section-tag">// stage 3</span>
+                <h1 class="section-title">Administrateur Systeme, Reseau & Securite</h1>
+                <p class="section-subtitle">Universite Paris-Dauphine - Janvier a Mars 2025</p>
             </div>
-            <div class="stage-image">
-                <img src="image-stage/dauphine.png" alt="Université de Dauphine">
-            </div>
-        </section>
 
-        <section class="gallery container">
-            <h2 style="text-align: center; color: var(--accent-green);">Galerie d'images</h2>
-            <figure class="gallery-item">
-                <img src="image-stage/dauphine-1.JPEG" alt="Image 1">
-                <figcaption>Figure 1: Server rack before and after my network cabling work.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/dauphine-2.JPEG" alt="Image 2">
-                <figcaption>Figure 2: Proxmox dashboard showing the configured VMs for the testing lab.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/dauphine-3.JPEG" alt="Image 3">
-                <figcaption>Figure 3: Detailed view of network switch configuration.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/dauphine-docker .JPEG" alt="Image 4">
-                <figcaption>Figure 4: Docker container setup for a development environment.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/dauphine-hyper-v.JPEG" alt="Image 5">
-                <figcaption>Figure 5: Hyper-V manager interface displaying virtual machine status.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/dauphine-smtp-2.JPEG" alt="Image 6">
-                <figcaption>Figure 6: Configuration screen for the SMTP relay service.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="image-stage/dauphine-sys.JPEG" alt="Image 7">
-                <figcaption>Figure 7: System monitoring dashboard showing server performance.</figcaption>
-            </figure>
+            <div class="stage-details" style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                <div class="stage-text" style="flex: 1; min-width: 300px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Administration de serveurs Windows & Active Directory</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Installation et gestion de serveurs Hyper-V et VMs</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Deploiement sur Proxmox, migration de machines virtuelles</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Reconfiguration IP, supervision reseau et securite</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Migration AD Windows 2012 vers 2022</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Mise a jour et maintenance des equipements reseau (switchs, routeurs)</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Configuration de pare-feu et VPN pour securiser les connexions</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(100,255,218,0.1);">Gestion des sauvegardes et restauration des donnees</li>
+                        <li style="padding: 0.5rem 0;">Redaction de documentations techniques pour les procedures IT</li>
+                    </ul>
+                </div>
+                <div class="stage-image" style="flex: 0 0 200px;">
+                    <img src="image-stage/dauphine.png" alt="Universite Paris-Dauphine" style="width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+
+            <h2 class="mt-4">Galerie</h2>
+            <div class="certification-list">
+                <div class="certification-box">
+                    <img src="image-stage/dauphine-1.JPEG" alt="Server rack">
+                    <p class="cert-title">Baie serveur - cablage reseau</p>
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/dauphine-2.JPEG" alt="Proxmox dashboard">
+                    <p class="cert-title">Dashboard Proxmox - VMs configurees</p>
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/dauphine-3.JPEG" alt="Network switch">
+                    <p class="cert-title">Configuration switch reseau</p>
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/dauphine-docker .JPEG" alt="Docker containers">
+                    <p class="cert-title">Setup Docker - environnement dev</p>
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/dauphine-hyper-v.JPEG" alt="Hyper-V manager">
+                    <p class="cert-title">Hyper-V Manager - statut VMs</p>
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/dauphine-smtp-2.JPEG" alt="SMTP relay">
+                    <p class="cert-title">Configuration service relais SMTP</p>
+                </div>
+                <div class="certification-box">
+                    <img src="image-stage/dauphine-sys.JPEG" alt="System monitoring">
+                    <p class="cert-title">Dashboard monitoring systeme</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../stage.html" class="btn btn-ghost">Retour aux stages</a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mohamed Elnaggar</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank">LinkedIn</a>
+            <a href="https://tryhackme.com/p/GUTSEM" target="_blank">TryHackMe</a>
+            <a href="mailto:mohamed.elnaggar@oteria.fr">Contact</a>
+        </div>
+        <p>&copy; 2026 Mohamed Elnaggar. Tous droits reserves.</p>
     </footer>
-
-    <script src="../assets/js/gsap.js"></script>
-    <script src="../assets/js/ScrollTrigger.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from(".big-title", {
-            opacity: 0,
-            y: 40,
-            duration: 1,
-            delay: 0.3
-        });
-
-        gsap.from(".subtitle", {
-            opacity: 0,
-            y: 40,
-            duration: 1,
-            delay: 0.6
-        });
-    </script>
 </body>
 
 </html>
