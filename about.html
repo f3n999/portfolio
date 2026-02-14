@@ -4,24 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="En savoir plus sur Mohamed Elnaggar, etudiant en cybersecurite a Oteria Cyber School.">
-    <title>A propos - Mohamed Elnaggar</title>
+    <meta name="description" content="En savoir plus sur Mohamed Elnaggar, étudiant en cybersécurité.">
+    <title>À propos - Mohamed Elnaggar</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="assets/js/gsap.js" defer></script>
-    <script src="assets/js/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
-    <canvas id="particles-canvas"></canvas>
-
     <header>
         <input type="checkbox" id="menu-toggle-input" class="menu-toggle-input">
-        <label for="menu-toggle-input" class="menu-toggle-label">&#9776;</label>
+        <label for="menu-toggle-input" class="menu-toggle-label">☰</label>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">A propos</a></li>
+                <li><a href="about.html">À propos</a></li>
                 <li><a href="parcours.html">Parcours</a></li>
                 <li><a href="stage.html">Stages</a></li>
                 <li><a href="projet.html">Projets</a></li>
@@ -33,87 +28,27 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section id="about" class="hero">
             <div class="container text-center">
-                <div class="section-header">
-                    <span class="section-tag">// a propos</span>
-                    <h1 class="section-title">Qui suis-je ?</h1>
-                    <p class="section-subtitle">Etudiant en cybersecurite, passionne par la securite offensive et la protection des systemes.</p>
-                </div>
-
-                <div class="terminal">
-                    <div class="terminal-header">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                        <span class="terminal-title">mohamed@portfolio ~ %</span>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">$ </span>
-                            <span class="terminal-command">cat about.json</span>
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            {
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            &nbsp;&nbsp;<span class="terminal-key">"nom"</span>: <span class="terminal-value">"Mohamed Elnaggar"</span>,
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            &nbsp;&nbsp;<span class="terminal-key">"age"</span>: <span class="terminal-value">20</span>,
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            &nbsp;&nbsp;<span class="terminal-key">"formation"</span>: <span class="terminal-value">"Bachelor Cybersecurite - Oteria Cyber School"</span>,
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            &nbsp;&nbsp;<span class="terminal-key">"statut"</span>: <span class="terminal-value">"Admin Systeme & Reseau Junior @ Topchrono (Alternance)"</span>,
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            &nbsp;&nbsp;<span class="terminal-key">"passions"</span>: <span class="terminal-value">["Pentest", "Reseaux", "CTF", "Securite offensive"]</span>,
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            &nbsp;&nbsp;<span class="terminal-key">"plateformes"</span>: <span class="terminal-value">["TryHackMe", "HackTheBox"]</span>,
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            &nbsp;&nbsp;<span class="terminal-key">"objectif"</span>: <span class="terminal-value">"Devenir un expert en cybersecurite"</span>
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            }
-                        </div>
-                    </div>
-                </div>
-
-                <div style="max-width: 650px; margin: 2rem auto;">
-                    <p>Je m'appelle Mohamed Elnaggar, j'ai 20 ans, et je suis actuellement en Bachelor Cybersecurite a Oteria Cyber School en alternance chez Topchrono en tant qu'Administrateur Systeme & Reseau Junior.</p>
-                    <p>Curieux, determine et toujours en apprentissage, je me forme activement sur des plateformes comme TryHackMe et Hack The Box. J'aime comprendre comment les systemes fonctionnent... et comment les attaquer pour mieux les defendre.</p>
-                    <p>Ce portfolio est une vitrine de ce que j'ai appris, de ce que je construis, et de ce que je peux apporter.</p>
-                </div>
-
-                <div class="skill-tags" style="justify-content: center; max-width: 600px; margin: 0 auto;">
-                    <span class="skill-tag">Pentest</span>
-                    <span class="skill-tag">Active Directory</span>
-                    <span class="skill-tag">Linux</span>
-                    <span class="skill-tag">Windows Server</span>
-                    <span class="skill-tag">Wireshark</span>
-                    <span class="skill-tag">Nmap</span>
-                    <span class="skill-tag">Burp Suite</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">SIEM</span>
-                    <span class="skill-tag">Proxmox</span>
-                    <span class="skill-tag">Networking</span>
-                    <span class="skill-tag">PowerShell</span>
-                </div>
+                <h1 class="big-title">À propos de moi</h1>
+                <p class="subtitle">Étudiant en cybersécurité | Passionné de réseau et de sécurité</p>
+                <p>Je m’appelle Mohamed Elnaggar, j’ai 19 ans, et je suis étudiant en cybersécurité.
+                    J’avance chaque jour avec un objectif simple : devenir un professionnel capable de sécuriser des
+                    systèmes,
+                    d’identifier les failles, et de proposer des solutions concrètes.</p>
+                <p>Curieux, déterminé et toujours en train d’apprendre, je me forme avec passion sur des plateformes
+                    comme TryHackMe et Hack The Box.
+                    J’aime comprendre comment les systèmes fonctionnent… et comment les attaquer pour mieux les
+                    défendre.</p>
+                <p>Ce portfolio est une vitrine de ce que j’ai appris, de ce que je construis, et de ce que je peux
+                    apporter.
+                    Bienvenue dans mon univers.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank">LinkedIn</a>
-            <a href="https://tryhackme.com/p/GUTSEM" target="_blank">TryHackMe</a>
-            <a href="mailto:mohamed.elnaggar@oteria.fr">Contact</a>
-        </div>
-        <p>&copy; 2026 Mohamed Elnaggar. Tous droits reserves.</p>
+        <p>&copy; 2025 Mohamed Elnaggar. Tous droits réservés.</p>
     </footer>
 </body>
 

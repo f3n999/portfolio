@@ -4,24 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projets en cybersecurite de Mohamed Elnaggar - SANDBOX et ProjetXpython.">
+    <meta name="description" content="Découvrez mes projets en cybersécurité et mes expériences professionnelles.">
     <title>Projets - Mohamed Elnaggar</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="assets/js/gsap.js" defer></script>
-    <script src="assets/js/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
-    <canvas id="particles-canvas"></canvas>
-
     <header>
         <input type="checkbox" id="menu-toggle-input" class="menu-toggle-input">
-        <label for="menu-toggle-input" class="menu-toggle-label">&#9776;</label>
+        <label for="menu-toggle-input" class="menu-toggle-label">☰</label>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">A propos</a></li>
+                <li><a href="about.html">À propos</a></li>
                 <li><a href="parcours.html">Parcours</a></li>
                 <li><a href="stage.html">Stages</a></li>
                 <li><a href="projet.html">Projets</a></li>
@@ -34,59 +29,96 @@
 
     <main>
         <section class="projects container">
-            <div class="section-header">
-                <span class="section-tag">// projets</span>
-                <h1 class="section-title">Mes Projets</h1>
-                <p class="section-subtitle">Projets techniques realises dans le cadre de ma formation en cybersecurite</p>
-            </div>
-
+            <h1>Mes Projets</h1>
             <div class="project-card-list">
                 <div class="project-card">
-                    <div class="project-icon">&#128737;</div>
-                    <h3>SANDBOX</h3>
-                    <p class="project-description">Mise en place d'un environnement sandbox securise dedie a l'analyse de malwares et aux tests de securite en conditions isolees. Ce projet permet d'executer des fichiers suspects dans un environnement controle, d'observer leur comportement et d'identifier les menaces potentielles sans risque pour le systeme hote.</p>
-                    <h4>Technologies</h4>
+                    <h3>SIEM Cluster Deployment with Wazuh</h3>
+                    <p class="project-description">Implementation of a complete Security Information and Event Management (SIEM) solution with Wazuh to centralize and analyze logs, detect threats, and automate incident response on both Windows and Linux systems.</p>
+                    <h4>Skills / Technologies:</h4>
                     <ul class="project-skills">
-                        <li>Virtualisation</li>
-                        <li>Analyse Malware</li>
-                        <li>Isolation Reseau</li>
-                        <li>Monitoring</li>
-                        <li>Linux</li>
-                        <li>Windows</li>
-                        <li>Snapshots</li>
-                        <li>Securite Defensive</li>
+                        <li>Wazuh</li>
+                        <li>SIEM</li>
+                        <li>ELK Stack</li>
+                        <li>File Integrity Monitoring (FIM)</li>
+                        <li>VirusTotal API</li>
+                        <li>Active-Response</li>
+                        <li>Proxmox</li>
+                        <li>Debian</li>
+                        <li>Windows Server</li>
                     </ul>
-                    <a href="https://github.com/f3n999/SandBox" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                    <a href="#GITHUB_PROJECT1_PLACEHOLDER" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">View Project on GitHub</a>
                 </div>
-
                 <div class="project-card">
-                    <div class="project-icon">&#128013;</div>
-                    <h3>ProjetXpython</h3>
-                    <p class="project-description">Developpement d'un outil Python dedie a la cybersecurite, automatisant des taches de reconnaissance, de scan et de tests de securite. Cet outil permet de realiser des audits rapides, d'automatiser des checks de vulnerabilites et de generer des rapports structures.</p>
-                    <h4>Technologies</h4>
+                    <h3>Secure Infrastructure with Active Directory</h3>
+                    <p class="project-description">Design and deployment of a complete and secure network and system infrastructure based on Active Directory services.</p>
+                    <h4>Skills / Technologies:</h4>
                     <ul class="project-skills">
-                        <li>Python</li>
-                        <li>Scripting</li>
-                        <li>Automatisation</li>
-                        <li>Scan Reseau</li>
-                        <li>Reconnaissance</li>
-                        <li>Cybersecurite</li>
-                        <li>CLI</li>
-                        <li>API</li>
+                        <li>Active Directory (AD DS, AD CS)</li>
+                        <li>GPO</li>
+                        <li>DHCP</li>
+                        <li>DNS</li>
+                        <li>Windows Server 2022</li>
+                        <li>PowerShell</li>
+                        <li>IT Security</li>
                     </ul>
-                    <a href="https://github.com/f3n999/Projet-X-Python-" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                    <a href="#GITHUB_PROJECT2_PLACEHOLDER" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">View Project on GitHub</a>
                 </div>
             </div>
+<!--
+    <h2>Nom du Projet</h2>
+    <img src="path/to/project_banner_image.jpg" alt="Bannière du Projet X" style="width:100%; max-width:600px; margin-bottom:20px;">
+
+    <div class="project-details">
+        <h3>Description</h3>
+        <p>
+            Objectif principal du projet, problèmes résolus, fonctionnalités clés implémentées.
+            Par exemple: Mise en place d'une infrastructure Active Directory complète pour simuler un environnement d'entreprise,
+            incluant la gestion des utilisateurs, des groupes, les GPOs, et les services DNS/DHCP.
+        </p>
+
+        <h3>Technologies Utilisées (Stack Technique)</h3>
+        <ul>
+            <li>Windows Server 2022 (pour Active Directory, DNS, DHCP)</li>
+            <li>Proxmox (pour la virtualisation des serveurs)</li>
+            <li>PfSense (pour le pare-feu et le routage inter-VLANs)</li>
+            <li>Poste client Windows 10/11</li>
+            <li>PowerShell (pour l'automatisation de certaines tâches d'administration)</li>
+        </ul>
+
+        <h3>Mon Rôle et Démarche</h3>
+        <p>
+            Description détaillée de ce que vous avez fait, étape par étape.
+            Exemple:
+            1. Conception de l'architecture réseau et du plan d'adressage IP.
+            2. Installation et configuration des VMs serveurs (Contrôleur de Domaine, etc.) sur Proxmox.
+            3. Installation des rôles AD DS, DNS, DHCP.
+            4. Création de l'arborescence des Unités d'Organisation (UO).
+            5. Définition et application des Group Policy Objects (GPO) pour la sécurité et la configuration des postes.
+            6. Tests de fonctionnement et validation.
+        </p>
+
+        <h3>Visuels (Captures d'écran, Diagrammes)</h3>
+        <div class="project-gallery" style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
+            <img src="path/to/screenshot1.jpg" alt="Description de la capture 1" style="width:100%; max-width:300px; border:1px solid #ccc;">
+            <img src="path/to/diagram_reseau.png" alt="Diagramme réseau du projet" style="width:100%; max-width:300px; border:1px solid #ccc;">
+            <!-- Ajouter plus d'images/diagrammes si nécessaire -->
+        </div>
+  
+
+
+        <h3>Code Source / Documentation</h3>
+        <p>
+            Le code source, les scripts de configuration et la documentation détaillée de ce projet sont disponibles sur GitHub:
+            <a href="#YOUR_GITHUB_PROJECT_LINK_HERE" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+        </p>
+        <hr style="margin:30px 0;">
+    </div>
+-->
         </section>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank">LinkedIn</a>
-            <a href="https://tryhackme.com/p/GUTSEM" target="_blank">TryHackMe</a>
-            <a href="mailto:mohamed.elnaggar@oteria.fr">Contact</a>
-        </div>
-        <p>&copy; 2026 Mohamed Elnaggar. Tous droits reserves.</p>
+        <p>&copy; 2025 Mohamed Elnaggar</p>
     </footer>
 </body>
 
