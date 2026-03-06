@@ -4,16 +4,16 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-// ---- Particle Background ----
+// ---- Particle Background (BIGGER, MORE VISIBLE) ----
 (function initParticles() {
-    const canvas = document.getElementById('particles-canvas');
+    var canvas = document.getElementById('particles-canvas');
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    let mouse = { x: null, y: null };
-    const PARTICLE_COUNT = 60;
-    const CONNECTION_DIST = 120;
-    const MOUSE_DIST = 150;
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    var mouse = { x: null, y: null };
+    var PARTICLE_COUNT = 90;
+    var CONNECTION_DIST = 160;
+    var MOUSE_DIST = 200;
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -34,9 +34,12 @@ gsap.registerPlugin(ScrollTrigger);
     function Particle() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
-        this.radius = Math.random() * 1.5 + 0.5;
+        this.vx = (Math.random() - 0.5) * 0.6;
+        this.vy = (Math.random() - 0.5) * 0.6;
+        this.radius = Math.random() * 2.5 + 0.8;
+        this.baseRadius = this.radius;
+        // Random color between cyan and purple
+        this.hue = Math.random() > 0.7 ? 270 : 185;
     }
 
     Particle.prototype.update = function() {
@@ -45,15 +48,17 @@ gsap.registerPlugin(ScrollTrigger);
         if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
         if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
 
-        // Mouse repulsion
         if (mouse.x !== null && mouse.y !== null) {
             var dx = this.x - mouse.x;
             var dy = this.y - mouse.y;
             var dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < MOUSE_DIST) {
                 var force = (MOUSE_DIST - dist) / MOUSE_DIST;
-                this.x += dx * force * 0.02;
-                this.y += dy * force * 0.02;
+                this.x += dx * force * 0.035;
+                this.y += dy * force * 0.035;
+                this.radius = this.baseRadius + force * 3;
+            } else {
+                this.radius += (this.baseRadius - this.radius) * 0.05;
             }
         }
     };
@@ -61,7 +66,21 @@ gsap.registerPlugin(ScrollTrigger);
     Particle.prototype.draw = function() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(100, 255, 218, 0.4)';
+        if (this.hue === 270) {
+            ctx.fillStyle = 'rgba(124, 58, 237, 0.6)';
+        } else {
+            ctx.fillStyle = 'rgba(0, 240, 255, 0.5)';
+        }
+        ctx.fill();
+
+        // Glow effect
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius * 2, 0, Math.PI * 2);
+        if (this.hue === 270) {
+            ctx.fillStyle = 'rgba(124, 58, 237, 0.08)';
+        } else {
+            ctx.fillStyle = 'rgba(0, 240, 255, 0.06)';
+        }
         ctx.fill();
     };
 
@@ -76,12 +95,30 @@ gsap.registerPlugin(ScrollTrigger);
                 var dy = particles[i].y - particles[j].y;
                 var dist = Math.sqrt(dx * dx + dy * dy);
                 if (dist < CONNECTION_DIST) {
-                    var opacity = (1 - dist / CONNECTION_DIST) * 0.15;
+                    var opacity = (1 - dist / CONNECTION_DIST) * 0.25;
                     ctx.beginPath();
-                    ctx.strokeStyle = 'rgba(100, 255, 218, ' + opacity + ')';
-                    ctx.lineWidth = 0.5;
+                    ctx.strokeStyle = 'rgba(0, 240, 255, ' + opacity + ')';
+                    ctx.lineWidth = 0.8;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Mouse connections
+        if (mouse.x !== null && mouse.y !== null) {
+            for (var k = 0; k < particles.length; k++) {
+                var dx2 = particles[k].x - mouse.x;
+                var dy2 = particles[k].y - mouse.y;
+                var dist2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+                if (dist2 < MOUSE_DIST) {
+                    var op = (1 - dist2 / MOUSE_DIST) * 0.4;
+                    ctx.beginPath();
+                    ctx.strokeStyle = 'rgba(0, 240, 255, ' + op + ')';
+                    ctx.lineWidth = 1;
+                    ctx.moveTo(particles[k].x, particles[k].y);
+                    ctx.lineTo(mouse.x, mouse.y);
                     ctx.stroke();
                 }
             }
@@ -108,34 +145,35 @@ gsap.registerPlugin(ScrollTrigger);
     var phrases = [
         'Cybersecurity Student @ Oteria',
         'Pentester in training',
-        'Network & System Security',
+        'SOC | Purple Team',
+        'Admin Systeme & Reseau @ Topchrono',
         'TryHackMe | HackTheBox',
         'Always learning, always hacking'
     ];
     var phraseIndex = 0;
     var charIndex = 0;
     var isDeleting = false;
-    var typeSpeed = 80;
+    var typeSpeed = 70;
 
     function type() {
         var current = phrases[phraseIndex];
         if (isDeleting) {
             el.textContent = current.substring(0, charIndex - 1);
             charIndex--;
-            typeSpeed = 40;
+            typeSpeed = 30;
         } else {
             el.textContent = current.substring(0, charIndex + 1);
             charIndex++;
-            typeSpeed = 80;
+            typeSpeed = 70;
         }
 
         if (!isDeleting && charIndex === current.length) {
-            typeSpeed = 2000;
+            typeSpeed = 2500;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
-            typeSpeed = 500;
+            typeSpeed = 400;
         }
 
         setTimeout(type, typeSpeed);
@@ -161,7 +199,7 @@ gsap.registerPlugin(ScrollTrigger);
     var currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('header nav ul li a').forEach(function(link) {
         var href = link.getAttribute('href');
-        if (href === currentPage) {
+        if (href && (href === currentPage || href.endsWith('/' + currentPage))) {
             link.classList.add('active');
         }
     });
@@ -172,15 +210,15 @@ gsap.registerPlugin(ScrollTrigger);
 // Header entrance
 gsap.from("header", {
     opacity: 0,
-    y: -20,
-    duration: 0.8,
-    ease: "power2.out"
+    y: -30,
+    duration: 1,
+    ease: "power3.out"
 });
 
 // Footer entrance
 gsap.from("footer", {
     opacity: 0,
-    y: 20,
+    y: 30,
     duration: 0.8,
     ease: "power2.out",
     scrollTrigger: {
@@ -189,75 +227,104 @@ gsap.from("footer", {
     }
 });
 
-// Hero animations
+// Hero animations - DRAMATIC
 if (document.querySelector(".hero")) {
     var heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     heroTl
         .from(".hero .profile-pic", {
             opacity: 0,
-            scale: 0.5,
-            duration: 0.8,
-            delay: 0.2
+            scale: 0,
+            rotation: 180,
+            duration: 1.2,
+            ease: "back.out(1.7)",
+            delay: 0.3
         })
         .from(".hero .greeting", {
             opacity: 0,
-            y: 20,
-            duration: 0.6
-        }, "-=0.3")
+            y: 30,
+            duration: 0.7,
+        }, "-=0.5")
         .from(".hero .big-title", {
+            opacity: 0,
+            y: 50,
+            scale: 0.9,
+            duration: 0.9
+        }, "-=0.3")
+        .from(".hero .subtitle", {
             opacity: 0,
             y: 30,
             duration: 0.7
         }, "-=0.3")
-        .from(".hero .subtitle", {
-            opacity: 0,
-            y: 20,
-            duration: 0.6
-        }, "-=0.2")
         .from(".hero .typing-text", {
             opacity: 0,
-            duration: 0.5
+            x: -30,
+            duration: 0.6
         }, "-=0.2")
         .from(".hero .status-badge", {
             opacity: 0,
-            scale: 0.8,
-            duration: 0.5
+            scale: 0,
+            duration: 0.6,
+            ease: "back.out(2)"
         }, "-=0.2")
-        .from(".hero .cta-buttons", {
+        .from(".hero .cta-buttons .btn", {
             opacity: 0,
-            y: 20,
-            duration: 0.6
+            y: 30,
+            scale: 0.8,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "back.out(1.5)"
         }, "-=0.2")
         .from(".hero .stats-row .stat-item", {
             opacity: 0,
-            y: 20,
-            duration: 0.5,
-            stagger: 0.1
+            y: 40,
+            scale: 0.8,
+            duration: 0.6,
+            stagger: 0.12,
+            ease: "back.out(1.5)"
         }, "-=0.3");
 }
 
-// Scroll-triggered animations for cards and sections
-gsap.utils.toArray('.project-card, .certification-box, .experience, .stage-box, .education-card, .card').forEach(function(el) {
+// Scroll-triggered animations for cards
+gsap.utils.toArray('.project-card, .certification-box, .experience, .stage-box, .education-card, .card, .glow-card').forEach(function(el) {
     gsap.from(el, {
         opacity: 0,
-        y: 40,
-        duration: 0.6,
+        y: 60,
+        scale: 0.95,
+        duration: 0.7,
+        ease: "power3.out",
         scrollTrigger: {
             trigger: el,
-            start: "top 85%",
+            start: "top 88%",
             toggleActions: "play none none none"
         }
     });
 });
 
-// Stagger animations for lists
+// Timeline items with stagger
 gsap.utils.toArray('.timeline-item').forEach(function(el, i) {
     gsap.from(el, {
         opacity: 0,
-        x: -30,
-        duration: 0.6,
-        delay: i * 0.1,
+        x: -50,
+        duration: 0.7,
+        delay: i * 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: el,
+            start: "top 88%",
+            toggleActions: "play none none none"
+        }
+    });
+});
+
+// Section headers - dramatic entrance
+gsap.utils.toArray('.section-header').forEach(function(el) {
+    gsap.from(el, {
+        opacity: 0,
+        y: 50,
+        scale: 0.95,
+        duration: 0.9,
+        ease: "power3.out",
         scrollTrigger: {
             trigger: el,
             start: "top 85%",
@@ -266,26 +333,31 @@ gsap.utils.toArray('.timeline-item').forEach(function(el, i) {
     });
 });
 
-// Section headers
-gsap.utils.toArray('.section-header, main > .container > h1, main > .container > h2, .stages h1, .projects h1, .certifications h1').forEach(function(el) {
-    gsap.from(el, {
-        opacity: 0,
-        y: 30,
-        duration: 0.7,
-        scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none none"
-        }
-    });
+// h2 headings outside section-headers
+gsap.utils.toArray('main h2').forEach(function(el) {
+    if (!el.closest('.section-header')) {
+        gsap.from(el, {
+            opacity: 0,
+            x: -40,
+            duration: 0.7,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: el,
+                start: "top 88%",
+                toggleActions: "play none none none"
+            }
+        });
+    }
 });
 
 // Terminal animation
 if (document.querySelector('.terminal-body')) {
     gsap.from('.terminal', {
         opacity: 0,
-        y: 30,
-        duration: 0.8,
+        y: 40,
+        scale: 0.95,
+        duration: 0.9,
+        ease: "power3.out",
         scrollTrigger: {
             trigger: '.terminal',
             start: "top 80%"
@@ -295,9 +367,10 @@ if (document.querySelector('.terminal-body')) {
     gsap.utils.toArray('.terminal-line').forEach(function(line, i) {
         gsap.from(line, {
             opacity: 0,
-            x: -15,
+            x: -20,
             duration: 0.4,
-            delay: 0.8 + i * 0.15,
+            delay: 0.9 + i * 0.12,
+            ease: "power2.out",
             scrollTrigger: {
                 trigger: '.terminal',
                 start: "top 80%"
@@ -306,16 +379,17 @@ if (document.querySelector('.terminal-body')) {
     });
 }
 
-// Veille sections
+// Veille intro/section cards
 gsap.utils.toArray('.intro, .section').forEach(function(el, i) {
     gsap.from(el, {
         opacity: 0,
-        y: 30,
-        duration: 0.6,
+        y: 40,
+        duration: 0.7,
         delay: i * 0.1,
+        ease: "power3.out",
         scrollTrigger: {
             trigger: el,
-            start: "top 85%",
+            start: "top 88%",
             toggleActions: "play none none none"
         }
     });
@@ -324,10 +398,10 @@ gsap.utils.toArray('.intro, .section').forEach(function(el, i) {
 // ---- Button hover effects ----
 document.querySelectorAll('.btn').forEach(function(btn) {
     btn.addEventListener('mouseenter', function() {
-        gsap.to(btn, { scale: 1.05, duration: 0.2 });
+        gsap.to(btn, { scale: 1.08, duration: 0.25, ease: "back.out(2)" });
     });
     btn.addEventListener('mouseleave', function() {
-        gsap.to(btn, { scale: 1, duration: 0.2 });
+        gsap.to(btn, { scale: 1, duration: 0.25, ease: "power2.out" });
     });
 });
 
@@ -344,7 +418,7 @@ document.querySelectorAll('.btn').forEach(function(btn) {
             onEnter: function() {
                 gsap.to({ val: 0 }, {
                     val: target,
-                    duration: 1.5,
+                    duration: 2,
                     ease: "power2.out",
                     onUpdate: function() {
                         el.textContent = Math.round(this.targets()[0].val) + suffix;
@@ -366,13 +440,29 @@ document.querySelectorAll('.btn').forEach(function(btn) {
     });
 })();
 
-// ---- Skill tag hover ripple ----
+// ---- Skill tag / project skill hover glow ----
 document.querySelectorAll('.project-skills li, .skill-tag').forEach(function(tag) {
     tag.addEventListener('mouseenter', function() {
-        gsap.fromTo(tag, { boxShadow: '0 0 0 0 rgba(100,255,218,0.4)' }, {
-            boxShadow: '0 0 0 6px rgba(100,255,218,0)',
-            duration: 0.5,
-            ease: "power2.out"
-        });
+        gsap.fromTo(tag,
+            { boxShadow: '0 0 0 0 rgba(0,240,255,0.5)' },
+            { boxShadow: '0 0 0 8px rgba(0,240,255,0)', duration: 0.6, ease: "power2.out" }
+        );
+    });
+});
+
+// ---- Tilt effect on cards ----
+document.querySelectorAll('.project-card, .education-card').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var centerX = rect.width / 2;
+        var centerY = rect.height / 2;
+        var rotateX = (y - centerY) / centerY * -4;
+        var rotateY = (x - centerX) / centerX * 4;
+        card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-8px)';
+    });
+    card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
     });
 });
