@@ -2,6 +2,19 @@
 // Mohamed Elnaggar Portfolio - Interactive JS
 // ============================================
 
+// Safety check: if GSAP didn't load, create stubs so nothing crashes
+if (typeof gsap === 'undefined') {
+    window.gsap = {
+        registerPlugin: function() {},
+        from: function() { return { from: function() { return this; } }; },
+        to: function() {},
+        fromTo: function() {},
+        timeline: function() { return { from: function() { return this; } }; },
+        utils: { toArray: function() { return []; } }
+    };
+    window.ScrollTrigger = { create: function() {} };
+}
+
 gsap.registerPlugin(ScrollTrigger);
 
 // ---- Particle Background (BIGGER, MORE VISIBLE) ----
@@ -229,60 +242,90 @@ gsap.from("footer", {
 
 // Hero animations - DRAMATIC
 if (document.querySelector(".hero")) {
-    var heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    // Ensure all hero elements become visible after animations complete or fail
+    var heroElements = '.hero .profile-pic, .hero .greeting, .hero .big-title, .hero .subtitle, .hero .typing-text, .hero .status-badge, .hero .cta-buttons .btn, .hero .stats-row .stat-item, .hero .hero-description';
 
-    heroTl
-        .from(".hero .profile-pic", {
-            opacity: 0,
-            scale: 0,
-            rotation: 180,
-            duration: 1.2,
-            ease: "back.out(1.7)",
-            delay: 0.3
-        })
-        .from(".hero .greeting", {
-            opacity: 0,
-            y: 30,
-            duration: 0.7,
-        }, "-=0.5")
-        .from(".hero .big-title", {
-            opacity: 0,
-            y: 50,
-            scale: 0.9,
-            duration: 0.9
-        }, "-=0.3")
-        .from(".hero .subtitle", {
-            opacity: 0,
-            y: 30,
-            duration: 0.7
-        }, "-=0.3")
-        .from(".hero .typing-text", {
-            opacity: 0,
-            x: -30,
-            duration: 0.6
-        }, "-=0.2")
-        .from(".hero .status-badge", {
-            opacity: 0,
-            scale: 0,
-            duration: 0.6,
-            ease: "back.out(2)"
-        }, "-=0.2")
-        .from(".hero .cta-buttons .btn", {
-            opacity: 0,
-            y: 30,
-            scale: 0.8,
-            duration: 0.5,
-            stagger: 0.1,
-            ease: "back.out(1.5)"
-        }, "-=0.2")
-        .from(".hero .stats-row .stat-item", {
-            opacity: 0,
-            y: 40,
-            scale: 0.8,
-            duration: 0.6,
-            stagger: 0.12,
-            ease: "back.out(1.5)"
-        }, "-=0.3");
+    function ensureHeroVisible() {
+        document.querySelectorAll(heroElements).forEach(function(el) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.visibility = 'visible';
+        });
+    }
+
+    // Safety timeout: if GSAP animations don't complete within 5s, force visibility
+    var safetyTimer = setTimeout(ensureHeroVisible, 5000);
+
+    try {
+        var heroTl = gsap.timeline({
+            defaults: { ease: "power3.out" },
+            onComplete: function() {
+                clearTimeout(safetyTimer);
+                ensureHeroVisible();
+            }
+        });
+
+        heroTl
+            .from(".hero .profile-pic", {
+                opacity: 0,
+                scale: 0,
+                rotation: 180,
+                duration: 1.2,
+                ease: "back.out(1.7)",
+                delay: 0.3
+            })
+            .from(".hero .greeting", {
+                opacity: 0,
+                y: 30,
+                duration: 0.7,
+            }, "-=0.5")
+            .from(".hero .big-title", {
+                opacity: 0,
+                y: 50,
+                scale: 0.9,
+                duration: 0.9
+            }, "-=0.3")
+            .from(".hero .subtitle", {
+                opacity: 0,
+                y: 30,
+                duration: 0.7
+            }, "-=0.3")
+            .from(".hero .typing-text", {
+                opacity: 0,
+                x: -30,
+                duration: 0.6
+            }, "-=0.2")
+            .from(".hero .status-badge", {
+                opacity: 0,
+                scale: 0,
+                duration: 0.6,
+                ease: "back.out(2)"
+            }, "-=0.2")
+            .from(".hero .cta-buttons .btn", {
+                opacity: 0,
+                y: 30,
+                scale: 0.8,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: "back.out(1.5)"
+            }, "-=0.2")
+            .from(".hero .stats-row .stat-item", {
+                opacity: 0,
+                y: 40,
+                scale: 0.8,
+                duration: 0.6,
+                stagger: 0.12,
+                ease: "back.out(1.5)"
+            }, "-=0.3")
+            .from(".hero .hero-description", {
+                opacity: 0,
+                y: 20,
+                duration: 0.6
+            }, "-=0.2");
+    } catch(e) {
+        clearTimeout(safetyTimer);
+        ensureHeroVisible();
+    }
 }
 
 // Scroll-triggered animations for cards
