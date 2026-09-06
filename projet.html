@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projets en cybersecurite de Mohamed Elnaggar - SANDBOX et ProjetXpython.">
+    <meta name="description" content="Projets de Mohamed Elnaggar - defense anti-ransomware, durcissement de conteneurs, gouvernance des identites, PKI interne et developpement fullstack.">
     <title>Projets - Mohamed Elnaggar</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/gsap.js" defer></script>
@@ -37,53 +37,166 @@
             <div class="section-header">
                 <span class="section-tag">// projets</span>
                 <h1 class="section-title">Mes Projets</h1>
-                <p class="section-subtitle">Projets techniques realises dans le cadre de ma formation en cybersecurite</p>
+                <p class="section-subtitle">Projets d'ecole et projets menes en entreprise. Defense anti-ransomware, durcissement de conteneurs, gouvernance des identites, PKI interne, developpement fullstack et systeme bas niveau.</p>
             </div>
 
             <div class="project-card-list">
+
                 <div class="project-card">
-                    <div class="project-icon">&#128737;</div>
-                    <h3>SANDBOX</h3>
-                    <p class="project-description">Mise en place d'un environnement sandbox securise dedie a l'analyse de malwares et aux tests de securite en conditions isolees. Ce projet permet d'executer des fichiers suspects dans un environnement controle, d'observer leur comportement et d'identifier les menaces potentielles sans risque pour le systeme hote.</p>
+                    <div class="project-icon">&#128231;</div>
+                    <h3>MailGuardianX</h3>
+                    <p class="project-description">Defense anti-ransomware par email pour le secteur de la sante. Projet de fin d'annee a Oteria, realise a six : j'en ai concu l'architecture et pris les decisions techniques. Le courrier entrant est analyse puis mis en file via Celery, les pieces jointes sont scannees par ClamAV et detonnees dans une sandbox CAPE, les indicateurs sont enrichis contre la base de renseignement MISP, et toute la chaine est observable via Prometheus et Grafana. Trois bases de donnees, secrets Docker, migrations Alembic, et trois niveaux de tests : unitaires, integration et bout en bout. <strong>Meilleure note de tous les projets de la promotion.</strong></p>
                     <h4>Technologies</h4>
                     <ul class="project-skills">
-                        <li>Virtualisation</li>
-                        <li>Analyse Malware</li>
-                        <li>Isolation Reseau</li>
-                        <li>Monitoring</li>
-                        <li>Linux</li>
-                        <li>Windows</li>
-                        <li>Snapshots</li>
-                        <li>Securite Defensive</li>
+                        <li>Python 3.11</li>
+                        <li>FastAPI</li>
+                        <li>Celery</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>Redis</li>
+                        <li>ClamAV</li>
+                        <li>CAPE Sandbox</li>
+                        <li>MISP</li>
+                        <li>Prometheus</li>
+                        <li>Grafana</li>
+                        <li>Docker Compose</li>
+                        <li>Alembic</li>
+                        <li>pytest</li>
                     </ul>
-                    <a href="https://github.com/f3n999/SandBox" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                    <a href="https://github.com/f3n999/MailGuardianX" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">&#128274;</div>
+                    <h3>SL1PCONNECT &mdash; Stack IoT durcie</h3>
+                    <p class="project-description">Re-conteneurisation securisee d'une plateforme IoT : quatre services applicatifs, PostgreSQL et supervision Grafana derriere un reverse proxy nginx en TLS. Le coeur du travail est l'isolation : un reseau <em>edge</em> expose et un reseau <em>data</em> strictement interne sans acces Internet, des conteneurs non-root dont les capacites Linux sont retirees, et des secrets tenus hors du depot. Le projet porte une chaine d'integration continue de securite complete : hadolint sur les Dockerfiles, validation du compose, pytest, et analyse de vulnerabilites Trivy sur le systeme de fichiers comme sur les images. Couche d'observabilite Loki et Promtail en extension.</p>
+                    <h4>Technologies</h4>
+                    <ul class="project-skills">
+                        <li>Docker</li>
+                        <li>nginx TLS</li>
+                        <li>PostgreSQL 16</li>
+                        <li>Grafana</li>
+                        <li>Loki</li>
+                        <li>Promtail</li>
+                        <li>Ansible</li>
+                        <li>GitHub Actions</li>
+                        <li>Trivy</li>
+                        <li>hadolint</li>
+                        <li>Isolation reseau</li>
+                        <li>Conteneurs non-root</li>
+                    </ul>
+                    <a href="https://github.com/f3n999/VI" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">&#128100;</div>
+                    <h3>MidPoint &mdash; Gouvernance des identites</h3>
+                    <p class="project-description">Deploiement d'une solution IGA integree a Microsoft Entra ID, en reponse a une demande de la direction des systemes d'information. Projet mene a trois. La chaine part d'un fichier RH recupere par FTP, genere automatiquement les adresses email, croise droits et licences, puis declenche le provisionnement vers Entra ID via l'API Microsoft Graph et vers d'autres services par API SCIM et non-SCIM. L'ensemble tourne dans un environnement structure pour gerer plusieurs entites d'un meme groupe.</p>
+                    <h4>Technologies</h4>
+                    <ul class="project-skills">
+                        <li>MidPoint 4.8</li>
+                        <li>Microsoft Entra ID</li>
+                        <li>Microsoft Graph API</li>
+                        <li>SCIM 2.0</li>
+                        <li>PL/pgSQL</li>
+                        <li>Provisionnement</li>
+                        <li>Cycle de vie des identites</li>
+                        <li>IGA</li>
+                    </ul>
+                    <a href="https://github.com/f3n999" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Depot prive &mdash; details sur demande</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">&#128273;</div>
+                    <h3>Traefik &amp; PKI interne sur Proxmox</h3>
+                    <p class="project-description">Audit de securite d'une infrastructure Proxmox en phase de laboratoire, puis conception du correctif. Avant tout passage en production, l'audit a fait ressortir plusieurs risques critiques. La reponse : Traefik v3 en reverse proxy unique sur une topologie a deux machines virtuelles, avec une autorite de certification interne Step-CA pour delivrer les certificats des services internes. L'objectif depasse ce seul service : poser une fondation de securite reutilisable pour tous les projets heberges ensuite.</p>
+                    <h4>Technologies</h4>
+                    <ul class="project-skills">
+                        <li>Traefik v3</li>
+                        <li>Step-CA</li>
+                        <li>Proxmox</li>
+                        <li>PKI</li>
+                        <li>TLS</li>
+                        <li>Reverse proxy</li>
+                        <li>Audit de securite</li>
+                        <li>Durcissement</li>
+                    </ul>
+                    <a href="https://github.com/f3n999" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Depot prive &mdash; details sur demande</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">&#128373;</div>
+                    <h3>SEC-TOPCHRONO &mdash; Analyseur de phishing</h3>
+                    <p class="project-description">Detection de phishing par analyse locale de fichiers <code>.eml</code>. Le parti pris technique est l'independance : l'outil ne depend ni d'Outlook ni de l'API Graph, il lit le fichier brut. Il est donc utilisable sur n'importe quel poste, sur un message deja isole, et sans donner acces a une boite mail. Cinquieme version, avec enrichissement par cles d'API externes tenues hors du depot.</p>
+                    <h4>Technologies</h4>
+                    <ul class="project-skills">
+                        <li>Python 3.11</li>
+                        <li>Parsing MIME</li>
+                        <li>Analyse d'en-tetes</li>
+                        <li>Threat intelligence</li>
+                        <li>Gestion de secrets</li>
+                        <li>CLI</li>
+                    </ul>
+                    <a href="https://github.com/f3n999" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Depot prive &mdash; details sur demande</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">&#127963;</div>
+                    <h3>Kemet &mdash; Media independant</h3>
+                    <p class="project-description">Application web fullstack deployee en production, sur un sujet volontairement hors cybersecurite : la vulgarisation exigeante de l'Egypte ancienne. Contenu editorial gratuit et ouvrages numeriques payants. Le depot porte une chaine d'integration continue avec detection de secrets par gitleaks et analyse statique, parce qu'un projet personnel merite les memes garde-fous qu'un projet professionnel.</p>
+                    <h4>Technologies</h4>
+                    <ul class="project-skills">
+                        <li>Supabase</li>
+                        <li>Vercel</li>
+                        <li>HTML/CSS/JS</li>
+                        <li>GitHub Actions</li>
+                        <li>gitleaks</li>
+                        <li>eslint</li>
+                        <li>Deploiement continu</li>
+                    </ul>
+                    <a href="https://bdd-momo.vercel.app" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Voir le site en ligne</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">&#128683;</div>
+                    <h3>Mini-Fail2ban en C</h3>
+                    <p class="project-description">Programme en C inspire de Fail2ban, ecrit pour le cours de systeme d'exploitation. Il surveille un fichier de log, detecte les tentatives de connexion echouees par expressions regulieres, et declenche un bannissement simule apres un nombre d'echecs donne. L'interet du projet n'est pas l'outil, qui existe deja : c'est de comprendre au niveau du systeme comment on lit un flux de log en continu et comment on decide d'agir dessus.</p>
+                    <h4>Technologies</h4>
+                    <ul class="project-skills">
+                        <li>C</li>
+                        <li>Systeme d'exploitation</li>
+                        <li>Expressions regulieres</li>
+                        <li>Analyse de logs</li>
+                        <li>Make</li>
+                        <li>Linux</li>
+                    </ul>
+                    <a href="https://github.com/f3n999/fail2ban" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
                 </div>
 
                 <div class="project-card">
                     <div class="project-icon">&#128013;</div>
-                    <h3>ProjetXpython</h3>
-                    <p class="project-description">Developpement d'un outil Python dedie a la cybersecurite, automatisant des taches de reconnaissance, de scan et de tests de securite. Cet outil permet de realiser des audits rapides, d'automatiser des checks de vulnerabilites et de generer des rapports structures.</p>
+                    <h3>Phishing Email Analyzer</h3>
+                    <p class="project-description">Premier outil d'analyse de phishing, ecrit pour le cours de Python B3. Il lit un fichier <code>.eml</code>, en extrait les en-tetes, les liens et les pieces jointes, et remonte les signaux suspects. Une seule dependance externe, volontairement. C'est le projet dont SEC-TOPCHRONO est la suite : le meme probleme, repris plus tard avec ce que j'avais appris entre-temps.</p>
                     <h4>Technologies</h4>
                     <ul class="project-skills">
                         <li>Python</li>
-                        <li>Scripting</li>
-                        <li>Automatisation</li>
-                        <li>Scan Reseau</li>
-                        <li>Reconnaissance</li>
-                        <li>Cybersecurite</li>
-                        <li>CLI</li>
-                        <li>API</li>
+                        <li>Parsing .eml</li>
+                        <li>BeautifulSoup4</li>
+                        <li>Analyse d'en-tetes</li>
+                        <li>Detection d'URL</li>
                     </ul>
                     <a href="https://github.com/f3n999/Projet-X-Python-" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
                 </div>
+
             </div>
         </section>
     </main>
 
     <footer>
         <div class="footer-links">
-            <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank">LinkedIn</a>
-            <a href="https://tryhackme.com/p/GUTSEM" target="_blank">TryHackMe</a>
+            <a href="https://github.com/f3n999" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/mohamed-elnaggar2005/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://tryhackme.com/p/GUTSEM" target="_blank" rel="noopener noreferrer">TryHackMe</a>
             <a href="mailto:mohamed.elnaggar@oteria.fr">Contact</a>
         </div>
         <p>&copy; 2026 Mohamed Elnaggar. Tous droits reserves.</p>
